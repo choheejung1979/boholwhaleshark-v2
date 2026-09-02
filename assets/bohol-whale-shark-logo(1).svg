@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650">
+<defs><linearGradient id="a" x1="0" x2="1"><stop stop-color="#69E5F0"/><stop offset="1" stop-color="#21D4E4"/></linearGradient></defs>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M175 310C350 278 475 235 620 188C760 142 905 125 1085 158C1205 180 1320 228 1435 280C1300 272 1175 275 1050 292C900 313 765 337 610 350C445 364 300 354 175 310Z" fill="#062D43" stroke="url(#a)" stroke-width="10"/>
+<path d="M700 167C735 78 780 58 820 150" stroke="url(#a)" stroke-width="10"/>
+<path d="M175 310C120 280 82 256 58 220M175 310C120 337 85 364 58 404" stroke="url(#a)" stroke-width="10"/>
+<path d="M230 365C500 405 980 390 1365 340M300 397C610 430 1010 416 1280 382M405 425C680 445 930 438 1120 418" stroke="#69E5F0" stroke-width="7"/>
+</g>
+<g fill="#F7FBFC"><circle cx="760" cy="190" r="8"/><circle cx="805" cy="181" r="6"/><circle cx="850" cy="174" r="9"/><circle cx="900" cy="180" r="6"/><circle cx="945" cy="188" r="8"/><circle cx="995" cy="198" r="6"/><circle cx="835" cy="212" r="7"/><circle cx="885" cy="217" r="5"/><circle cx="935" cy="225" r="8"/><circle cx="985" cy="232" r="5"/><circle cx="1030" cy="239" r="7"/></g>
+<text x="800" y="525" text-anchor="middle" fill="#F7FBFC" font-family="Arial,sans-serif" font-size="105" font-weight="700" letter-spacing="32">BOHOL</text>
+<text x="800" y="600" text-anchor="middle" fill="#69E5F0" font-family="Arial,sans-serif" font-size="48" font-weight="700" letter-spacing="18">WHALE SHARK</text>
+</svg>
