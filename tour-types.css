@@ -1,0 +1,20 @@
+.tour-types-section{padding:110px 0 125px;background:var(--paper);color:var(--ink)}
+.tour-types-section .section-topline{border-bottom-color:var(--line)}
+.tour-types-section .journal-heading{padding:62px 0 48px;grid-template-columns:1fr 350px;gap:70px;align-items:end}
+.tour-types-section .journal-heading h2{color:var(--ink)}
+.tour-types-section .journal-heading p{color:var(--muted);font-size:14px;line-height:1.7}
+.tour-types-section .tour-type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tour-types-section .tour-type-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;overflow:hidden}
+.tour-types-section .tour-type-card:hover{transform:translateY(-6px);border-color:rgba(16,36,44,.28);box-shadow:0 18px 40px rgba(6,28,40,.08)}
+.tour-types-section .tour-card-image{height:250px;position:relative;background:linear-gradient(145deg,#0b3b4b,#176477 55%,#06232f);overflow:hidden}
+.tour-types-section .tour-card-image:before{content:'';position:absolute;width:125%;height:75%;left:-12%;bottom:-35%;border-radius:50%;border:1px solid rgba(255,255,255,.18);transform:rotate(-8deg)}
+.tour-types-section .tour-card-image:after{content:'';position:absolute;width:58%;height:34%;left:21%;top:29%;border-radius:55% 48% 45% 52%;background:rgba(255,255,255,.08);transform:rotate(-7deg)}
+.tour-types-section .tour-card-image span{position:absolute;z-index:2;left:18px;bottom:16px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.16em;color:rgba(255,255,255,.68)}
+.tour-types-section .tour-card-body{min-height:205px;padding:22px 20px 20px;display:flex;justify-content:space-between;gap:14px}
+.tour-types-section .tour-type-label{display:block;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.14em;color:#36aeb7;margin-bottom:8px}
+.tour-types-section .tour-card-body h3{font-family:Sora,sans-serif;font-size:19px;line-height:1.2;letter-spacing:-.03em;color:var(--ink)}
+.tour-types-section .tour-card-body p{font-size:12px;line-height:1.65;color:#66767c;margin-top:11px;max-width:220px}
+.tour-types-section .tour-type-arrow{flex:0 0 auto;width:30px;height:30px;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--navy);transition:.2s}
+.tour-types-section .tour-type-card:hover .tour-type-arrow{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:1050px){.tour-types-section .tour-type-grid{grid-template-columns:repeat(2,1fr)}.tour-types-section .tour-card-image{height:280px}}
+@media(max-width:600px){.tour-types-section{padding:82px 0}.tour-types-section .journal-heading{grid-template-columns:1fr;gap:25px;padding:45px 0 32px}.tour-types-section .tour-type-grid{grid-template-columns:1fr;gap:14px}.tour-types-section .tour-card-image{height:240px}.tour-types-section .tour-card-body{min-height:175px}}
