@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="v2.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="inner-page">
+<body class="inner-page faq-page">
   <header class="site-header scrolled" id="site-header">
     <a class="brand" href="index.html"><span class="brand-mark">BW</span><span class="brand-name">BOHOL<br>WHALE SHARK</span></a>
     <nav class="desktop-nav">
@@ -32,16 +32,16 @@
   </header>
 
   <main>
-    <section class="inner-hero">
+    <section class="inner-hero faq-hero">
       <div class="container">
         <p class="eyebrow" style="color:var(--aqua)">FREQUENTLY ASKED QUESTIONS</p>
-        <h1>Bohol Whale Shark<br><em>FAQ.</em></h1>
+        <h1>Questions,<br><em>answered.</em></h1>
         <p class="page-intro">Everything you need to know before reserving your whale shark experience in Bohol.</p>
       </div>
     </section>
 
-    <section class="inner-content">
-      <div class="container">
+    <section class="inner-content faq-content">
+      <div class="container faq-container">
         <div class="faq-section">
           <div class="section-kicker">01 · FAQ</div>
           <div class="faq-list">
@@ -74,17 +74,19 @@
 
         <div class="faq-question-section">
           <div class="section-kicker">02 · ASK A QUESTION</div>
-          <div class="question-card info-card">
+          <div class="question-card">
             <div class="question-copy">
               <p class="eyebrow" style="color:var(--aqua)">CAN'T FIND YOUR ANSWER?</p>
               <h2>Ask us<br><em>anything.</em></h2>
-              <p>Have a question about the tour, reservation, timing or preparation? Leave your question below.</p>
+              <p>Have a question about the tour, reservation, timing or preparation? Send us your question and we'll get back to you.</p>
             </div>
             <form class="question-form" id="question-form">
-              <label for="question">Your question</label>
-              <textarea id="question" name="question" rows="6" placeholder="Write your question here..." required></textarea>
-              <button class="button button-light" type="submit">Send Question <span>→</span></button>
-              <p class="form-note">No name or email is required.</p>
+              <label for="question">YOUR QUESTION</label>
+              <textarea id="question" name="question" placeholder="Write your question here..." required></textarea>
+              <div class="question-form-footer">
+                <span>No name or email required.</span>
+                <button class="button button-light" type="submit">Send Question <span>→</span></button>
+              </div>
             </form>
           </div>
         </div>
@@ -105,7 +107,7 @@
       e.preventDefault();
       const button = this.querySelector('button');
       const original = button.innerHTML;
-      button.innerHTML = 'Question Received <span>✓</span>';
+      button.innerHTML = 'Sent <span>✓</span>';
       button.disabled = true;
       this.reset();
       setTimeout(() => {
