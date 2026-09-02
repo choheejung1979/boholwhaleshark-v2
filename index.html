@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bohol Whale Shark — official whale shark booking, daily field updates, guides, reviews and community in Bohol, Philippines." />
-  <title>Bohol Whale Shark | Official Bohol Whale Shark</title>
+  <meta name="description" content="Bohol Whale Shark — whale shark reservations, daily field updates, photos and community in Bohol, Philippines." />
+  <title>Bohol Whale Shark | Bohol, Philippines</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,47 +12,163 @@
 </head>
 <body class="home-page">
   <header class="site-header" id="site-header">
-    <a class="brand" href="index.html" aria-label="Bohol Whale Shark home"><span class="brand-mark">BW</span><span class="brand-name">BOHOL<br />WHALE SHARK</span></a>
+    <a class="brand" href="index.html" aria-label="Bohol Whale Shark home">
+      <span class="brand-mark">BW</span>
+      <span class="brand-name">BOHOL<br />WHALE SHARK</span>
+    </a>
+
     <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="today.html">Today's Update</a><a href="tour.html">Tour</a><a href="guide.html">Guide</a><a href="community.html">Community</a><a href="reviews.html">Reviews</a>
+      <a href="today.html">Whale Shark Journal</a>
+      <a href="community.html">Community</a>
+      <a href="booking.html">Booking</a>
     </nav>
-    <div class="header-actions"><a class="sign-in" href="signin.html">Sign In</a><a class="button button-dark button-small" href="booking.html">Book a Tour</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button></div>
+
+    <div class="header-actions">
+      <a class="button button-light button-small" href="booking.html">Book Now</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="today.html">Whale Shark Journal</a>
+      <a href="community.html">Community</a>
+      <a href="booking.html">Booking</a>
+      <a class="mobile-book" href="booking.html">Book a Tour <span>→</span></a>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="today-strip section-light">
-      <div class="container today-strip-grid">
-        <div class="today-strip-title"><div class="section-kicker dark-kicker"><span>LIVE</span> TODAY'S UPDATE</div><h2>Today's whale shark<br /><em>conditions.</em></h2></div>
-        <div class="today-strip-data"><div class="today-live"><span class="live-dot"></span><strong>OPERATING</strong><small>Updated 08:32 AM</small></div><div><span>SEA</span><strong>GOOD</strong></div><div><span>WEATHER</span><strong>CLEAR</strong></div><div><span>VISIBILITY</span><strong>GOOD</strong></div><a class="text-link dark-link" href="today.html">View Full Update <span>↗</span></a></div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="hero-waterline"></div>
+        <div class="hero-shark-mark"><span>WHALE<br />SHARK</span></div>
       </div>
-    </section>
-
-    <section class="hero hero-v2">
-      <div class="hero-media" aria-hidden="true"><div class="hero-placeholder"><span>BOHOL · PHILIPPINES</span></div></div>
       <div class="hero-overlay"></div>
-      <div class="hero-content container">
-        <p class="eyebrow hero-eyebrow">BOHOL · PHILIPPINES</p>
-        <h1>Discover Bohol's<br />Gentle Giants<span class="hero-dot">.</span></h1>
-        <p class="script-line">One unforgettable encounter.</p>
-        <div class="hero-actions"><a class="button button-light" href="booking.html">Book a Tour <span>→</span></a><a class="text-link light-link" href="today.html">Today's Update <span>↗</span></a></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">BOHOL · PHILIPPINES</p>
+          <h1>Discover Bohol's<br /><span>Gentle Giants.</span></h1>
+          <p class="script-line">One unforgettable encounter.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="booking.html">Book a Whale Shark Tour <span>→</span></a>
+            <a class="text-link light-link" href="#today">Today's Whale Shark <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <div><span>LOCATION</span><strong>BOHOL</strong></div>
+          <div><span>EXPERIENCE</span><strong>EARLY MORNING</strong></div>
+          <div><span>RESERVATION</span><strong>ADVANCE BOOKING</strong></div>
+        </div>
       </div>
-      <div class="hero-status"><div><span>SEA CONDITION</span><strong>GOOD</strong></div><div><span>WEATHER</span><strong>CLEAR</strong></div><div><span>UPDATED</span><strong>08:32 AM</strong></div></div>
     </section>
 
-    <section class="home-booking section-light">
-      <div class="container home-booking-grid"><div><div class="section-kicker dark-kicker"><span>01</span> BOHOL WHALE SHARK TOUR</div><h2>One experience.<br /><em>Made simple.</em></h2></div><div class="home-booking-copy"><p>Choose your date, reserve your seats, and get ready for your whale shark experience in Bohol.</p><a class="button button-dark" href="booking.html">Book a Whale Shark Tour <span>→</span></a></div></div>
+    <!-- TODAY -->
+    <section class="today-section" id="today">
+      <div class="container">
+        <div class="section-topline">
+          <p class="section-kicker"><span>01</span> TODAY'S WHALE SHARK</p>
+          <a class="text-link dark-link" href="today.html">Open Journal <span>↗</span></a>
+        </div>
+
+        <div class="today-heading">
+          <div>
+            <h2>Today's whale shark<br /><em>conditions.</em></h2>
+            <p>Before you go, check the latest field report from Bohol.</p>
+          </div>
+          <div class="live-status"><span class="live-dot"></span><strong>OPERATING</strong><small>Updated this morning</small></div>
+        </div>
+
+        <div class="today-data">
+          <div><span>SEA</span><strong>GOOD</strong><small>Current sea condition</small></div>
+          <div><span>WEATHER</span><strong>CLEAR</strong><small>Morning conditions</small></div>
+          <div><span>VISIBILITY</span><strong>GOOD</strong><small>Water clarity</small></div>
+          <div><span>DEPARTURE</span><strong>EARLY MORNING</strong><small>Operation schedule</small></div>
+        </div>
+      </div>
     </section>
 
-    <section class="home-community section-dark">
-      <div class="container home-community-grid"><div><div class="section-kicker"><span>02</span> FROM THE COMMUNITY</div><h2>Real stories.<br /><em>Real travelers.</em></h2><a class="text-link light-link" href="community.html">Visit Community <span>↗</span></a></div><div class="home-posts"><a href="community.html"><span>Q</span><strong>What should I bring for the whale shark tour?</strong><small>12 replies</small></a><a href="reviews.html"><span>REVIEW</span><strong>Our family whale shark experience</strong><small>Verified Traveler</small></a></div></div>
+    <!-- EXPERIENCE -->
+    <section class="experience-section">
+      <div class="container experience-grid">
+        <div class="experience-visual">
+          <div class="experience-frame"><span>BOHOL OCEAN</span></div>
+          <div class="experience-caption">A closer look at the experience.</div>
+        </div>
+        <div class="experience-copy">
+          <p class="section-kicker dark-kicker"><span>02</span> THE EXPERIENCE</p>
+          <h2>Made for the<br /><em>ocean.</em></h2>
+          <p class="lead">A simple way to reserve your whale shark experience in Bohol — with the information you need before you leave shore.</p>
+          <div class="experience-points">
+            <div><strong>01</strong><span>Reserve your date in advance.</span></div>
+            <div><strong>02</strong><span>Check the latest field conditions.</span></div>
+            <div><strong>03</strong><span>Meet the ocean early in the morning.</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="home-guide section-cream"><div class="container home-guide-grid"><div><div class="section-kicker dark-kicker"><span>03</span> BEFORE YOU GO</div><h2>Everything you<br /><em>need to know.</em></h2></div><a class="button button-dark" href="guide.html">Explore the Guide <span>→</span></a></div></section>
+    <!-- JOURNAL PREVIEW -->
+    <section class="journal-preview section-dark">
+      <div class="container">
+        <div class="section-topline">
+          <p class="section-kicker"><span>03</span> WHALE SHARK JOURNAL</p>
+          <a class="text-link light-link" href="today.html">View All Updates <span>↗</span></a>
+        </div>
+        <div class="journal-heading">
+          <div><h2>Every day.<br /><em>Recorded.</em></h2></div>
+          <p>Daily field reports and photographs build a visual record of whale shark operations in Bohol.</p>
+        </div>
+        <div class="journal-cards">
+          <a class="journal-card journal-main" href="today.html"><div class="journal-image"><span>FIELD PHOTO</span></div><div><span>AUGUST 2026 · DAILY RECORD</span><h3>Today's Field Report</h3></div></a>
+          <a class="journal-card" href="today.html"><div class="journal-image"><span>PHOTO</span></div><div><span>DAILY UPDATE</span><h3>Past Operations</h3></div></a>
+          <a class="journal-card" href="today.html"><div class="journal-image"><span>PHOTO</span></div><div><span>DAILY UPDATE</span><h3>From the Water</h3></div></a>
+        </div>
+      </div>
+    </section>
 
-    <section class="final-cta home-final"><div class="cta-placeholder image-placeholder"><span>BOHOL OCEAN</span></div><div class="cta-overlay"></div><div class="cta-content"><p class="eyebrow">BOHOL · PHILIPPINES</p><h2>Ready for the<br /><em>gentle giants?</em></h2><a class="button button-light" href="booking.html">Book a Whale Shark Tour <span>→</span></a></div></section>
+    <!-- COMMUNITY -->
+    <section class="community-section">
+      <div class="container community-grid">
+        <div>
+          <p class="section-kicker dark-kicker"><span>04</span> COMMUNITY</p>
+          <h2>Ask.<br /><em>Share.</em></h2>
+        </div>
+        <div class="community-copy">
+          <p>Questions, preparation tips and real traveler conversations — all in one place.</p>
+          <a class="button button-dark" href="community.html">Visit Community <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section class="booking-cta">
+      <div class="booking-cta-visual" aria-hidden="true"></div>
+      <div class="booking-cta-overlay"></div>
+      <div class="booking-cta-content">
+        <p class="eyebrow">BOHOL · PHILIPPINES</p>
+        <h2>Meet the<br /><em>gentle giants.</em></h2>
+        <p>Choose your date and reserve your whale shark experience.</p>
+        <a class="button button-light" href="booking.html">Book a Whale Shark Tour <span>→</span></a>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer section-dark"><div class="container footer-grid"><div class="footer-brand"><div class="brand-name">BOHOL<br />WHALE SHARK</div><p>Official whale shark booking and information platform in Bohol.</p></div><div><h4>EXPLORE</h4><a href="today.html">Today's Update</a><a href="tour.html">Tour</a><a href="guide.html">Guide</a><a href="community.html">Community</a><a href="reviews.html">Reviews</a></div><div><h4>ACCOUNT</h4><a href="signin.html">Sign In</a><a href="booking.html">My Booking</a></div><div><h4>LEGAL</h4><a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></div></div><div class="container footer-bottom"><span>© 2026 Bohol Whale Shark</span><span>Bohol, Philippines</span></div></footer>
+  <footer class="site-footer section-dark">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">BOHOL<br />WHALE SHARK</div>
+        <p>Whale shark reservations, daily field updates and community in Bohol, Philippines.</p>
+      </div>
+      <div><h4>EXPLORE</h4><a href="today.html">Whale Shark Journal</a><a href="community.html">Community</a><a href="booking.html">Booking</a></div>
+      <div><h4>BOOKING</h4><a href="booking.html">Reserve a Tour</a><a href="booking.html">Check Dates</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Bohol Whale Shark</span><span>Bohol, Philippines</span></div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
