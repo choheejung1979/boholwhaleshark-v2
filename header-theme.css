@@ -33,15 +33,20 @@
 .home-page .today-info-panel .today-info-item small{color:rgba(255,255,255,.55)!important}
 .home-page .today-info-panel .today-info-note{color:rgba(255,255,255,.55)!important;border-top-color:rgba(255,255,255,.12)!important}
 
-/* Coming soon announcement in the hero */
-.home-page .hero-meta{display:block!important;width:auto!important;margin-top:58px!important;padding-left:18px;border-left:2px solid rgba(67,219,231,.9);max-width:520px}
+/* Refined grand-opening announcement */
+.home-page .hero-meta{position:relative;display:block!important;width:min(660px,72vw)!important;margin-top:52px!important;padding:18px 0 20px 24px!important;border-left:1px solid rgba(123,234,242,.7);max-width:none;overflow:visible;background:linear-gradient(90deg,rgba(5,35,51,.42),rgba(5,35,51,.08) 62%,transparent);box-shadow:-12px 0 42px rgba(45,216,231,.07)}
+.home-page .hero-meta:before{content:'';position:absolute;left:-3px;top:14px;width:5px;height:5px;border-radius:50%;background:#7beaf2;box-shadow:0 0 0 0 rgba(123,234,242,.55),0 0 18px rgba(123,234,242,.9);animation:bwPulse 2.2s ease-out infinite}
+.home-page .hero-meta:after{content:'';position:absolute;left:24px;bottom:0;width:110px;height:1px;background:linear-gradient(90deg,#7beaf2,rgba(123,234,242,0));transform-origin:left;animation:bwLine 3.6s ease-in-out infinite}
 .home-page .hero-meta>div{display:none!important}
-.home-page .hero-meta>div:first-child{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:4px!important;min-height:0!important;padding:0!important;border:0!important}
-.home-page .hero-meta>div:first-child span{font-family:'Bebas Neue',sans-serif!important;font-size:11px!important;line-height:1!important;letter-spacing:.22em!important;color:#7beaf2!important}
+.home-page .hero-meta>div:first-child{display:flex!important;position:relative;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;min-height:0!important;padding:0!important;border:0!important}
+.home-page .hero-meta>div:first-child span{font-family:'Bebas Neue',sans-serif!important;font-size:11px!important;line-height:1!important;letter-spacing:.28em!important;color:#7beaf2!important;font-weight:400!important}
 .home-page .hero-meta>div:first-child span{font-size:0!important}
 .home-page .hero-meta>div:first-child span:after{content:'GRAND OPENING';font-size:11px!important}
-.home-page .hero-meta>div:first-child strong{font-family:'Sora',sans-serif!important;font-size:clamp(28px,3.1vw,46px)!important;line-height:.98!important;letter-spacing:-.045em!important;color:#fff!important;font-weight:700!important}
+.home-page .hero-meta>div:first-child strong{font-family:'Sora',sans-serif!important;font-size:clamp(34px,4vw,60px)!important;line-height:.94!important;letter-spacing:-.055em!important;color:#fff!important;font-weight:700!important;background:linear-gradient(105deg,#fff 0%,#fff 35%,#7beaf2 52%,#fff 68%,#fff 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:bwShimmer 5s ease-in-out infinite}
 .home-page .hero-meta>div:first-child strong{font-size:0!important}
-.home-page .hero-meta>div:first-child strong:after{content:'NOVEMBER 1, 2026';font-size:clamp(28px,3.1vw,46px)!important}
-.home-page .hero-meta>div:first-child:after{content:'Reservations open soon.';font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.5;letter-spacing:.04em;color:rgba(255,255,255,.68);margin-top:5px}
-@media(max-width:600px){.home-page .hero-meta{margin-top:42px!important;padding-left:14px;max-width:100%}.home-page .hero-meta>div:first-child strong:after{font-size:clamp(25px,8.5vw,36px)!important}.home-page .hero-meta>div:first-child:after{font-size:10px}}
+.home-page .hero-meta>div:first-child strong:after{content:'NOVEMBER 1, 2026';font-size:clamp(34px,4vw,60px)!important}
+.home-page .hero-meta>div:first-child:after{content:'A new whale shark experience is coming to Bohol.  •  Reservations opening soon.';font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.6;letter-spacing:.03em;color:rgba(255,255,255,.72);margin-top:4px}
+@keyframes bwPulse{0%{box-shadow:0 0 0 0 rgba(123,234,242,.5),0 0 16px rgba(123,234,242,.8)}70%{box-shadow:0 0 0 8px rgba(123,234,242,0),0 0 22px rgba(123,234,242,.35)}100%{box-shadow:0 0 0 0 rgba(123,234,242,0),0 0 16px rgba(123,234,242,.8)}}
+@keyframes bwLine{0%,100%{transform:scaleX(.45);opacity:.35}50%{transform:scaleX(1);opacity:1}}
+@keyframes bwShimmer{0%,65%{background-position:220% 0}85%,100%{background-position:-20% 0}}
+@media(max-width:600px){.home-page .hero-meta{width:calc(100% - 6px)!important;margin-top:38px!important;padding:15px 0 17px 16px!important}.home-page .hero-meta>div:first-child strong:after{font-size:clamp(27px,8.5vw,38px)!important}.home-page .hero-meta>div:first-child:after{font-size:9px}.home-page .hero-meta:after{left:16px;width:78px}}
