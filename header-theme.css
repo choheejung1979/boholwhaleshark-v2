@@ -3,7 +3,7 @@
 .site-header.scrolled{top:12px!important;height:70px!important;background:rgba(2,24,38,.96)!important;border-color:rgba(123,234,242,.10)!important}
 .site-header .brand{position:static!important;left:auto!important;transform:none!important;display:flex;align-items:center;flex-shrink:0;width:190px;height:48px;background:none!important}
 .site-header .brand-mark,.site-header .brand-name{display:none!important}
-.inner-page .site-header .brand:before{content:'';display:block;width:190px;height:48px;background:url('assets/BW%20logo.png?v=9') left center/contain no-repeat}
+.inner-page .site-header .brand:before{display:none!important}
 .site-header .site-logo{display:block;width:190px;height:auto;max-height:48px;object-fit:contain;object-position:left center}
 .site-header .desktop-nav{position:static!important;left:auto!important;transform:none!important;display:flex;align-items:center;gap:32px;margin-left:auto!important;margin-right:30px!important;white-space:nowrap}
 .site-header .desktop-nav a{font-family:'Sora',sans-serif!important;font-size:11px!important;line-height:1!important;letter-spacing:.11em!important;font-weight:600!important;text-transform:uppercase!important;color:#eafcff!important;opacity:1!important;text-decoration:none!important;transition:color .2s ease,opacity .2s ease}
