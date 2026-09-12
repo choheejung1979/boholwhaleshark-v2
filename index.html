@@ -31,6 +31,12 @@
     @media(max-width:600px){.payment-strip-inner{gap:20px!important}.payment-strip-methods .payment-set{gap:20px!important;padding-right:20px!important}}
   </style>
   <link rel="stylesheet" href="header-theme.css?v=20260912-1">
+
+    <style>
+      /* Homepage TOUR TYPES cards are a visual carousel only — not direct links. */
+      #tour-types .tour-card{cursor:default!important}
+      #tour-types .tour-card:focus{outline:none!important}
+    </style>
 </head>
 <body class="home-page">
   <header class="site-header" id="site-header">
@@ -181,34 +187,34 @@
       </div>
       <div class="tour-type-carousel">
         <div class="tour-track" id="tour-track">
-          <a class="tour-card" href="tour.html">
+          <div class="tour-card" tabindex="0">
             <div class="tour-card-content">
               <div><div class="tour-card-number">01</div><div class="tour-card-type">BASIC</div></div>
               <div><h3>Ticket Only</h3><p>For guests who only need the whale shark experience ticket.</p></div>
               <span class="tour-card-link">View Details</span>
             </div>
-          </a>
-          <a class="tour-card is-active" href="tour.html">
+          </div>
+          <div class="tour-card" tabindex="0">
             <div class="tour-card-content">
               <div><div class="tour-card-number">02</div><div class="tour-card-type">TRANSFER</div></div>
               <div><h3>Pick &amp; Drop</h3><p>Whale shark experience with pickup and drop-off service.</p></div>
               <span class="tour-card-link">View Details</span>
             </div>
-          </a>
-          <a class="tour-card" href="tour.html">
+          </div>
+          <div class="tour-card" tabindex="0">
             <div class="tour-card-content">
               <div><div class="tour-card-number">03</div><div class="tour-card-type">PRIVATE</div></div>
               <div><h3>Private Tour</h3><p>A private setup designed around your own group.</p></div>
               <span class="tour-card-link">View Details</span>
             </div>
-          </a>
-          <a class="tour-card" href="tour.html">
+          </div>
+          <div class="tour-card" tabindex="0">
             <div class="tour-card-content">
               <div><div class="tour-card-number">04</div><div class="tour-card-type">COMBO</div></div>
               <div><h3>Whale Shark<br>+ Napaling</h3><p>Combine the whale shark experience with a Napaling tour.</p></div>
               <span class="tour-card-link">View Details</span>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
