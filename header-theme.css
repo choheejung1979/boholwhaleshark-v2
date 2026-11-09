@@ -112,3 +112,7 @@ body.inner-page .site-header .brand{background:transparent!important;border:0!im
 body.inner-page .site-header .desktop-nav a{color:#eafcff!important;opacity:1!important;background:transparent!important;border:0!important}
 body.inner-page .site-header .desktop-nav a:hover{color:#43dbe7!important;background:transparent!important;border:0!important}
 body.inner-page .site-header .book-now-link{background:#25b8c8!important;color:#fff!important}
+
+
+/* Remove the temporary Grand Opening announcement from the homepage hero */
+.home-page .hero-meta{display:none!important}
