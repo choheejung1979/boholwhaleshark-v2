@@ -30,7 +30,7 @@
     @media(max-width:950px){.payment-strip-inner{gap:26px!important}.payment-strip-methods .payment-set{gap:24px!important;padding-right:24px!important}}
     @media(max-width:600px){.payment-strip-inner{gap:20px!important}.payment-strip-methods .payment-set{gap:20px!important;padding-right:20px!important}}
   </style>
-  <link rel="stylesheet" href="header-theme.css?v=20261109-2">
+  <link rel="stylesheet" href="header-theme.css?v=20261112-onepage">
 
     <style>
       /* Homepage TOUR TYPES cards are a visual carousel only — not direct links. */
@@ -55,6 +55,69 @@
         #tour-types .ticket-only-home h3{color:#fff!important}
         #tour-types .ticket-only-home p{color:rgba(255,255,255,.78)!important}
       </style>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+#today,#tour-types,#experience,#faq,#booking,#policies,#terms,#privacy,#refunds,#contact,#disputes{scroll-margin-top:100px}
+.site-header{z-index:1000}
+.onepage-tour-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:18px auto 0;max-width:1180px}
+.onepage-tour-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:320px;padding:30px;border-radius:22px;overflow:hidden;border:1px solid rgba(123,234,242,.22);background:linear-gradient(145deg,rgba(8,70,91,.92),rgba(2,27,43,.96));box-shadow:0 18px 48px rgba(0,0,0,.22);transition:transform .3s,border-color .3s,box-shadow .3s}
+.onepage-tour-card:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 85% 20%,rgba(54,212,226,.22),transparent 35%),linear-gradient(145deg,rgba(5,46,65,.06),rgba(1,17,29,.52))}
+.onepage-tour-card:hover{transform:translateY(-5px);border-color:rgba(123,234,242,.65);box-shadow:0 22px 55px rgba(0,0,0,.30),0 0 28px rgba(33,212,228,.1)}
+.onepage-tour-card.ticket-featured{background-image:linear-gradient(90deg,rgba(2,20,34,.82),rgba(2,20,34,.32)),url("https://cdn.jsdelivr.net/gh/choheejung1979/boholwhaleshark-v2@main/assets/hero-whale-shark.jpg");background-size:cover;background-position:center}
+.onepage-tour-kicker{font:18px 'Bebas Neue',sans-serif;letter-spacing:.12em;color:#7beaf2}
+.onepage-tour-copy{max-width:460px;margin:32px 0 26px}
+.onepage-tour-copy h3{font:700 clamp(25px,2.5vw,34px)/1.1 Sora,sans-serif;color:#fff;margin:0 0 12px}
+.onepage-tour-copy p{font:14px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.76);max-width:430px;margin:0}
+.onepage-tour-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.onepage-tour-bottom strong{font:32px 'Bebas Neue',sans-serif;color:#7beaf2;letter-spacing:.02em}
+.onepage-tour-bottom a,.onepage-question-cta>a,.onepage-primary-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:12px 18px;border-radius:999px;background:#25b8c8;color:#fff;text-decoration:none;font:700 11px Sora,sans-serif;letter-spacing:.04em;transition:transform .2s,background .2s}
+.onepage-tour-bottom a:hover,.onepage-question-cta>a:hover,.onepage-primary-button:hover{transform:translateY(-2px);background:#32cbd7}
+.onepage-tour-bottom a span{font-size:16px}
+.onepage-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.onepage-pills span{padding:7px 10px;border:1px solid rgba(123,234,242,.24);border-radius:999px;color:rgba(255,255,255,.76);font:10px Sora,sans-serif;letter-spacing:.08em}
+.onepage-faq-section,.onepage-policies-section{position:relative;padding:92px 0;background:linear-gradient(180deg,#031b2b,#052b40 70%,#031a29);color:#fff}
+.onepage-section-heading{display:flex;justify-content:space-between;align-items:end;margin:34px 0 30px}
+.onepage-section-heading h2,.onepage-booking-inner h2{font:800 clamp(38px,5vw,62px)/.98 Sora,sans-serif;letter-spacing:-.055em;margin:0}
+.onepage-section-heading h2 em,.onepage-booking-inner h2 em{font-style:normal;color:#7beaf2}
+.onepage-section-heading p{max-width:440px;margin:18px 0 0;color:rgba(235,247,249,.68);line-height:1.7}
+.onepage-faq-list,.onepage-policy-list{display:grid;gap:12px;max-width:980px;margin:0 auto}
+.onepage-faq-list details,.onepage-policy-list details{border:1px solid rgba(123,234,242,.18);border-radius:14px;background:rgba(5,43,62,.62);overflow:hidden}
+.onepage-faq-list summary,.onepage-policy-list summary{cursor:pointer;list-style:none;padding:19px 22px;color:#fff;font:600 14px Sora,sans-serif;display:flex;align-items:center;gap:16px}
+.onepage-faq-list summary::-webkit-details-marker,.onepage-policy-list summary::-webkit-details-marker{display:none}
+.onepage-faq-list summary:after,.onepage-policy-list summary:after{content:"+";margin-left:auto;color:#7beaf2;font:24px 'DM Sans',sans-serif}
+.onepage-faq-list details[open] summary:after,.onepage-policy-list details[open] summary:after{content:"−"}
+.onepage-faq-list details p{padding:0 22px 20px;margin:0;color:rgba(235,247,249,.7);font:14px/1.75 'DM Sans',sans-serif;max-width:800px}
+.onepage-question-cta{display:flex;justify-content:space-between;align-items:center;gap:22px;max-width:980px;margin:30px auto 0;padding:24px;border:1px solid rgba(123,234,242,.18);border-radius:18px;background:rgba(3,28,43,.5)}
+.onepage-question-cta h3{font:700 23px Sora,sans-serif;margin:8px 0}.onepage-question-cta p{font:13px/1.6 'DM Sans',sans-serif;color:rgba(255,255,255,.65);margin:0}
+.onepage-booking-section{padding:95px 0;background:radial-gradient(circle at 75% 25%,rgba(25,183,215,.18),transparent 30%),linear-gradient(145deg,#062e44,#021725);color:#fff}
+.onepage-booking-inner{display:grid;grid-template-columns:1fr .85fr;gap:50px;align-items:center}
+.onepage-booking-inner>div:first-child>p:not(.section-kicker){max-width:540px;color:rgba(235,247,249,.7);line-height:1.75;margin-top:22px}
+.onepage-booking-card{padding:32px;border:1px solid rgba(123,234,242,.24);border-radius:22px;background:rgba(5,43,62,.74);box-shadow:0 18px 55px rgba(0,0,0,.2)}
+.onepage-booking-card>span{font:11px Sora,sans-serif;letter-spacing:.16em;color:#7beaf2}
+.onepage-booking-card h3{font:700 26px Sora,sans-serif;margin:16px 0 10px}
+.onepage-booking-card p{font:14px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.68);margin:0 0 22px}
+.onepage-primary-button{min-height:48px;width:100%;box-sizing:border-box}
+.onepage-email-link{display:block;text-align:center;margin-top:17px;color:#a8edf2;font:13px 'DM Sans',sans-serif;text-decoration:none}
+.onepage-policy-list{max-width:980px}
+.onepage-policy-list summary{justify-content:flex-start;gap:16px}
+.onepage-policy-list summary span{flex:0 0 112px;color:#7beaf2;font:16px 'Bebas Neue',sans-serif;letter-spacing:.1em}
+.onepage-policy-copy{padding:0 24px 24px;color:rgba(235,247,249,.72);font:13px/1.8 'DM Sans',sans-serif}
+.onepage-policy-copy h4{margin:22px 0 8px;color:#fff;font:700 13px Sora,sans-serif}
+.onepage-policy-copy p{margin:10px 0}
+.onepage-policy-copy ul{margin:8px 0;padding-left:22px}
+.onepage-policy-copy li{margin:5px 0}
+.onepage-policy-note{margin-top:18px!important;padding:14px 16px;border-left:3px solid #25b8c8;background:rgba(23,116,133,.14)}
+.onepage-refund-table{width:100%;border-collapse:collapse;margin:16px 0;background:rgba(2,20,34,.25);font-size:13px}
+.onepage-refund-table th,.onepage-refund-table td{text-align:left;padding:12px;border-bottom:1px solid rgba(123,234,242,.15)}
+.onepage-refund-table th{color:#7beaf2}
+.onepage-contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.onepage-contact-grid div{padding:15px;border:1px solid rgba(123,234,242,.14);border-radius:12px;background:rgba(2,20,34,.2)}
+.onepage-contact-grid b{display:block;margin-bottom:7px;color:#7beaf2;font:10px Sora,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.onepage-contact-grid a{color:#fff;text-decoration:none;overflow-wrap:anywhere}
+.onepage-booking-hero-actions{margin-top:26px}
+.onepage-booking-hero-actions a{display:inline-flex;align-items:center;gap:12px;padding:15px 22px;border:1px solid rgba(123,234,242,.5);border-radius:999px;background:rgba(5,50,69,.55);color:#fff;text-decoration:none;font:13px Sora,sans-serif;letter-spacing:.08em}
+@media(max-width:760px){.onepage-tour-grid{grid-template-columns:1fr}.onepage-tour-card{min-height:290px;padding:24px}.onepage-question-cta{align-items:flex-start;flex-direction:column}.onepage-booking-inner{grid-template-columns:1fr;gap:28px}.onepage-section-heading{display:block}.onepage-contact-grid{grid-template-columns:1fr}.onepage-policy-list summary{padding:17px 16px;font-size:12px}.onepage-policy-list summary span{flex-basis:88px}.onepage-policy-copy{padding:0 16px 18px}.onepage-refund-table th,.onepage-refund-table td{padding:9px 7px;font-size:11px}}
+</style>
 </head>
 <body class="home-page">
   <header class="site-header" id="site-header">
@@ -62,21 +125,21 @@
       <img class="site-logo" src="assets/BW%20logo.png?v=2" alt="Bohol Whale Shark">
     </a>
     <nav class="desktop-nav">
-      <a href="today.html?v=20260902">Whale Shark Journal</a>
-      <a href="tour.html">Tour Types</a>
-      <a href="qna.html">FAQ</a>
+      <a href="#today">Today's Update</a>
+      <a href="#tour-types">Tour Types</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
-      <a class="book-now-link" href="booking.html">Book Now</a>
+      <a class="book-now-link" href="#booking">Book Now</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" aria-hidden="true">
-      <a href="today.html?v=20260902">Whale Shark Journal</a>
-      <a href="tour.html">Tour Types</a>
-      <a href="qna.html">FAQ</a>
-      <a href="booking.html">Book Now</a>
+      <a href="#today">Whale Shark Journal</a>
+      <a href="#tour-types">Tour Types</a>
+      <a href="#faq">FAQ</a>
+      <a href="#booking">Book Now</a>
     </div>
   </header>
   <main>
@@ -198,36 +261,28 @@
           <p>Four simple ways to book your whale shark experience in Bohol.</p>
         </div>
       </div>
-      <div class="tour-type-carousel">
-        <div class="tour-track" id="tour-track">
-          <div class="tour-card ticket-only-home" tabindex="0">
-            <div class="tour-card-content">
-              <div><div class="tour-card-number">01</div><div class="tour-card-type">BASIC</div></div>
-              <div><h3>Ticket Only</h3><p>For guests who only need the whale shark experience ticket.</p></div>
-              <span class="tour-card-link">View Details</span>
-            </div>
-          </div>
-          <div class="tour-card" tabindex="0">
-            <div class="tour-card-content">
-              <div><div class="tour-card-number">02</div><div class="tour-card-type">TRANSFER</div></div>
-              <div><h3>Pick &amp; Drop</h3><p>Whale shark experience with pickup and drop-off service.</p></div>
-              <span class="tour-card-link">View Details</span>
-            </div>
-          </div>
-          <div class="tour-card" tabindex="0">
-            <div class="tour-card-content">
-              <div><div class="tour-card-number">03</div><div class="tour-card-type">PRIVATE</div></div>
-              <div><h3>Private Tour</h3><p>A private setup designed around your own group.</p></div>
-              <span class="tour-card-link">View Details</span>
-            </div>
-          </div>
-          <div class="tour-card" tabindex="0">
-            <div class="tour-card-content">
-              <div><div class="tour-card-number">04</div><div class="tour-card-type">COMBO</div></div>
-              <div><h3>Whale Shark<br>+ Napaling</h3><p>Combine the whale shark experience with a Napaling tour.</p></div>
-              <span class="tour-card-link">View Details</span>
-            </div>
-          </div>
+      <div class="container">
+        <div class="onepage-tour-grid">
+          <article class="onepage-tour-card ticket-featured">
+            <div class="onepage-tour-kicker">01 / BASIC</div>
+            <div class="onepage-tour-copy"><h3>Ticket Only</h3><p>The simplest way to meet the gentle giants. Ideal when you already have your own transport.</p></div>
+            <div class="onepage-tour-bottom"><strong>₱1,920</strong><a href="#booking">Reserve This Tour <span>→</span></a></div>
+          </article>
+          <article class="onepage-tour-card transfer-card">
+            <div class="onepage-tour-kicker">02 / TRANSFER</div>
+            <div class="onepage-tour-copy"><h3>Pick &amp; Drop</h3><p>A smooth door-to-door option with pickup and drop-off arranged for you.</p><div class="onepage-pills"><span>PICKUP</span><span>DROP-OFF</span></div></div>
+            <div class="onepage-tour-bottom"><strong>₱2,820</strong><a href="#booking">Reserve This Tour <span>→</span></a></div>
+          </article>
+          <article class="onepage-tour-card private-card">
+            <div class="onepage-tour-kicker">03 / PRIVATE</div>
+            <div class="onepage-tour-copy"><h3>Private Tour</h3><p>Keep the day entirely yours with a private setup built around your group.</p><div class="onepage-pills"><span>PRIVATE</span><span>FLEXIBLE</span></div></div>
+            <div class="onepage-tour-bottom"><strong>₱4,500</strong><a href="#booking">Reserve This Tour <span>→</span></a></div>
+          </article>
+          <article class="onepage-tour-card combo-card">
+            <div class="onepage-tour-kicker">04 / COMBO</div>
+            <div class="onepage-tour-copy"><h3>Whale Shark + Napaling</h3><p>Make it a full ocean day by pairing the whale shark experience with Napaling.</p><div class="onepage-pills"><span>2 EXPERIENCES</span><span>FULL DAY</span></div></div>
+            <div class="onepage-tour-bottom"><strong>₱6,000</strong><a href="#booking">Reserve This Tour <span>→</span></a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -243,11 +298,90 @@
         <div class="experience-visual-panel" aria-hidden="true"></div>
       </div>
     </section>
-    <section class="booking-cta">
+    <section class="booking-cta" id="booking">
       <div class="booking-cta-content">
         <p class="eyebrow">BOHOL · PHILIPPINES</p>
         <h2>Meet the<br><em>gentle giants.</em></h2>
         <p>Choose your tour type and reserve your whale shark experience.</p>
+        <div class="onepage-booking-hero-actions"><a href="https://wa.me/639165286074?text=Hello%20Bohol%20Whale%20Shark%2C%20I%27d%20like%20to%20check%20tour%20availability." target="_blank" rel="noopener">CHECK AVAILABILITY ON WHATSAPP <span>↗</span></a></div>
+      </div>
+    </section>
+    <section class="onepage-faq-section" id="faq">
+      <div class="container">
+        <div class="section-topline"><p class="section-kicker"><span>04</span> FAQ</p></div>
+        <div class="onepage-section-heading"><div><h2>Questions,<br><em>answered.</em></h2><p>Everything you need to know before reserving your whale shark experience in Bohol.</p></div></div>
+        <div class="onepage-faq-list">
+          <details><summary>What should I bring for the whale shark tour?</summary><p>Bring swimwear, reef-safe sunscreen, a towel, and anything you personally need for an early-morning trip. We recommend keeping valuables to a minimum.</p></details>
+          <details><summary>What time does the tour depart?</summary><p>Whale shark experiences operate in the early morning. Your exact pickup or meeting time depends on the tour type and operating conditions for the day.</p></details>
+          <details><summary>Is the tour suitable for children?</summary><p>Children can join when the selected tour and current sea conditions are suitable. Please include children's ages when making an inquiry so we can advise you on the best option.</p></details>
+          <details><summary>How far in advance should I reserve?</summary><p>Advance reservation is recommended because departures are early and daily operating capacity can be limited. Same-day requests may not always be possible.</p></details>
+          <details><summary>Where can I check the latest operating conditions?</summary><p>Check the Today's Whale Shark section above for the latest field updates. Conditions can change, so the latest report should be checked before departure.</p></details>
+          <details><summary>What happens if weather or sea conditions are not suitable?</summary><p>Safety comes first. If conditions are not suitable for operation, the trip may be adjusted, postponed, or cancelled according to the day's operating decision.</p></details>
+        </div>
+        <div class="onepage-question-cta"><div><span class="section-kicker">STILL HAVE A QUESTION?</span><h3>Talk to our team.</h3><p>Ask about tour options, reservation details or preparation before your trip.</p></div><a href="https://wa.me/639165286074" target="_blank" rel="noopener">Ask on WhatsApp <span>↗</span></a></div>
+      </div>
+    </section>
+    <section class="onepage-booking-section" id="booking">
+      <div class="container onepage-booking-inner">
+        <div><p class="section-kicker"><span>05</span> RESERVATION</p><h2>Ready for your<br><em>ocean day?</em></h2><p>Whale shark tours operate in the early morning. Advance reservation is recommended. Choose your preferred tour above, then contact our team to check the date and availability.</p></div>
+        <div class="onepage-booking-card"><span>BOHOL WHALE SHARK</span><h3>Reserve your date.</h3><p>Send us your preferred tour, travel date and number of guests. Our team will confirm the meeting or pickup details.</p><a class="onepage-primary-button" href="https://wa.me/639165286074?text=Hello%20Bohol%20Whale%20Shark%2C%20I%27d%20like%20to%20check%20tour%20availability." target="_blank" rel="noopener">Check Availability on WhatsApp <b>→</b></a><a class="onepage-email-link" href="mailto:boseantravel@gmail.com">boseantravel@gmail.com</a></div>
+      </div>
+    </section>
+    <section class="onepage-policies-section" id="policies">
+      <div class="container">
+        <div class="section-topline"><p class="section-kicker"><span>06</span> CUSTOMER INFORMATION</p></div>
+        <div class="onepage-section-heading"><div><h2>Policies &amp;<br><em>Information.</em></h2><p>Important information about reservations, payments, cancellations, privacy and customer support.</p></div></div>
+        <div class="onepage-policy-list">
+          <details id="terms">
+            <summary><span>01 / TERMS</span> Terms and Conditions</summary>
+            <div class="onepage-policy-copy">
+              <p>These Terms and Conditions apply to reservations made with BS TRAVEL AND TOURS, operating under the brand Bohol Whale Shark in Bohol, Philippines.</p>
+              <h4>Reservations &amp; Payment</h4><ul><li>Reservations are confirmed only after full payment has been completed.</li><li>Prices are displayed and charged in Philippine Pesos (PHP).</li><li>Payments are processed through PayMongo and may be made using supported methods such as Visa, Mastercard, GCash and Maya.</li><li>Customers are responsible for providing accurate booking, contact and accommodation information.</li></ul>
+              <h4>Tour Operation</h4><ul><li>Participants must be at least 4 years old.</li><li>Pregnant participants may join only with appropriate medical clearance from a doctor.</li><li>Non-swimmers may participate; life jackets are provided.</li><li>Customers should bring appropriate swimwear.</li><li>For transfer-inclusive products, pickup and drop-off are available within Panglao Island.</li><li>Schedules, departure times and activities may be adjusted due to weather, sea conditions, safety requirements or operational circumstances.</li></ul>
+              <p class="onepage-policy-note">By completing a reservation and payment, the customer acknowledges these terms and agrees to follow reasonable safety instructions given by Bohol Whale Shark and its operating partners.</p>
+            </div>
+          </details>
+          <details id="privacy">
+            <summary><span>02 / PRIVACY</span> Privacy Policy</summary>
+            <div class="onepage-policy-copy">
+              <p>BS TRAVEL AND TOURS collects and processes customer information for reservation management, payment administration, customer communication, tour operations, safety and related business purposes. This policy is intended to operate consistently with the Philippines Data Privacy Act of 2012 (Republic Act No. 10173).</p>
+              <h4>Information We Collect</h4><ul><li>Full name</li><li>Email address</li><li>WhatsApp / telephone number</li><li>Nationality</li><li>Hotel or accommodation information</li><li>Number of participants</li><li>Booking and payment transaction information</li></ul>
+              <h4>How We Use Information</h4><p>Information may be used to confirm and manage reservations, arrange transfers, communicate with customers, process or reconcile payments, provide customer support, operate tours safely, and comply with applicable legal obligations.</p>
+              <h4>Data Rights</h4><p>Data subjects have rights under applicable Philippine privacy law, including rights relating to information, access, correction, objection and other statutory remedies. Requests may be made through our customer service contacts below.</p>
+              <p class="onepage-policy-note">We take reasonable organizational, physical and technical measures to protect personal information. Personal data is retained only for as long as reasonably necessary for the stated purposes, legal obligations, legitimate business purposes or the establishment, exercise or defense of legal claims.</p>
+            </div>
+          </details>
+          <details id="refunds">
+            <summary><span>03 / REFUNDS</span> Return and Refund Policy</summary>
+            <div class="onepage-policy-copy">
+              <p>Because our products are scheduled tourism services, cancellation refunds are based on the time remaining before the scheduled tour date.</p>
+              <table class="onepage-refund-table"><thead><tr><th>Cancellation timing</th><th>Refund</th></tr></thead><tbody><tr><td>15 days or more before tour</td><td>100%</td></tr><tr><td>8–14 days before tour</td><td>80%</td></tr><tr><td>4–7 days before tour</td><td>50%</td></tr><tr><td>Within 3 days of tour</td><td>Non-refundable</td></tr></tbody></table>
+              <h4>How to Request a Cancellation or Refund</h4><p>To request a cancellation, date change or refund, contact our customer service team using the email address or phone / WhatsApp number in the Customer Service section below. Please include the booking name and scheduled tour date so we can locate the reservation.</p>
+              <h4>Date Changes</h4><p>Date changes are available when requested at least 7 days before the scheduled tour date and are subject to availability.</p>
+              <h4>Weather / Sea Conditions</h4><p>If Bohol Whale Shark cancels the tour because weather or sea conditions make the operation unavailable or unsafe, the customer will receive a full refund.</p>
+              <h4>Operator Cancellation</h4><p>If the tour is cancelled by Bohol Whale Shark for operational reasons, the customer will receive a full refund.</p>
+              <h4>Refund Processing</h4><p>Approved refunds are processed within approximately 1 week.</p>
+              <p class="onepage-policy-note">The refund terms above do not limit any mandatory consumer rights or remedies that may apply under Philippine law.</p>
+            </div>
+          </details>
+          <details id="contact">
+            <summary><span>04 / CONTACT</span> Customer Service / Contact Information</summary>
+            <div class="onepage-policy-copy">
+              <p>For booking questions, changes, cancellation requests, refund requests, privacy requests or general customer support, please contact us.</p>
+              <div class="onepage-contact-grid"><div><b>Email</b><a href="mailto:boseantravel@gmail.com">boseantravel@gmail.com</a></div><div><b>Phone</b><a href="tel:+639165286074">0916 528 6074</a></div><div><b>WhatsApp</b><a href="https://wa.me/639165286074" target="_blank" rel="noopener">0916 528 6074</a></div></div>
+              <h4>Business Information</h4><p><strong>BS TRAVEL AND TOURS</strong><br>Bohol Whale Shark<br>Tawala, Panglao, Bohol, Philippines<br>Customer service hours: 07:00–18:00</p>
+            </div>
+          </details>
+          <details id="disputes">
+            <summary><span>05 / DISPUTES</span> Dispute Resolution Policy</summary>
+            <div class="onepage-policy-copy">
+              <h4>Contact Us First</h4><p>Customers are encouraged to contact Bohol Whale Shark first so that booking, service, payment, refund or other concerns can be reviewed and resolved directly.</p>
+              <p>Please provide the booking name, booking date, relevant reservation details and a clear description of the concern. We will review the matter and respond through the available customer service channels.</p>
+              <h4>Unresolved Disputes</h4><p>If a dispute cannot be resolved directly, the parties may pursue any remedies available under applicable laws and regulations of the Philippines, including applicable consumer protection and privacy procedures. Nothing in this policy is intended to waive mandatory rights or remedies provided by law.</p>
+              <p>Privacy-related complaints may also be brought to the National Privacy Commission where applicable. The NPC describes complaint procedures and data-subject rights under the Data Privacy Act.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
   </main>
@@ -259,21 +393,21 @@
       </div>
       <div>
         <h4>EXPLORE</h4>
-        <a href="today.html?v=20260902">Whale Shark Journal</a>
-        <a href="tour.html">Tour Types</a>
-        <a href="qna.html">FAQ</a>
+        <a href="#today">Whale Shark Journal</a>
+        <a href="#tour-types">Tour Types</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div>
         <h4>BOOKING</h4>
-        <a href="booking.html">Reserve a Tour</a>
-        <a href="booking.html">Check Dates</a>
+        <a href="#booking">Reserve a Tour</a>
+        <a href="#booking">Check Dates</a>
       </div>
     </div>
-    <div class="footer-policies"><a href="policies.html#terms">Terms and Conditions</a><a href="policies.html#privacy">Privacy Policy</a><a href="policies.html#refunds">Return and Refund Policy</a><a href="policies.html#contact">Customer Service / Contact</a><a href="policies.html#disputes">Dispute Resolution Policy</a></div><div class="container footer-bottom">
+    <div class="footer-policies"><a href="#terms">Terms and Conditions</a><a href="#privacy">Privacy Policy</a><a href="#refunds">Return and Refund Policy</a><a href="#contact">Customer Service / Contact</a><a href="#disputes">Dispute Resolution Policy</a></div><div class="container footer-bottom">
       <span>© 2026 Bohol Whale Shark</span>
       <span>Bohol, Philippines</span>
     </div>
   </footer>
-  <script src="script.js?v=20260903"></script>
+  <script src="script.js?v=20261112-onepage"></script>
 </body>
 </html>
