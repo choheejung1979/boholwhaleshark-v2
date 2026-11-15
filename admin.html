@@ -31,7 +31,7 @@
 </div>
 <div class="field"><label>FIELD NOTE (OPTIONAL)</label><textarea id="fieldNote" placeholder="Add a short note about today's conditions..."></textarea></div>
 <div class="field"><label>TODAY'S VIDEO</label><div class="upload"><strong>Upload a video file</strong><div class="hint">MP4, MOV or WEBM · maximum 200 MB</div><input id="videoFile" type="file" accept="video/mp4,video/quicktime,video/webm"><div id="videoName" class="hint"></div><video id="videoPreview" class="video-preview hidden" controls playsinline></video></div></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn aqua" type="submit">Save today's report</button><span id="saveStatus" class="status"></span></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button id="saveReportBtn" class="btn aqua" type="button">Save today's report</button><span id="saveStatus" class="status"></span></div>
 </form></section>
 <section id="reservationsPanel" class="panel hidden"><div class="panel-head"><div><h2>Reservation records</h2><div class="muted">Booking requests stored in the reservations database.</div></div><button id="refreshReservations" class="btn ghost">Refresh</button></div><div id="reservationSummary" class="muted" style="margin-bottom:14px"></div><div id="reservationList" class="empty">Loading reservation records...</div><p class="hint" style="margin-top:14px">현재 예약 페이지와 예약 데이터베이스는 아직 연결되지 않았습니다. 실제 예약이 저장되도록 예약 접수 기능을 연결한 뒤 이곳에서 확인할 수 있습니다.</p></section>
 <section id="historyPanel" class="panel hidden"><div class="panel-head"><div><h2>Condition history</h2><div class="muted">Previously published daily reports.</div></div><button id="refreshHistory" class="btn ghost">Refresh</button></div><div id="adminHistoryList" class="empty">Loading history...</div></section>
@@ -60,7 +60,43 @@ document.getElementById('logoutBtn').addEventListener('click',async()=>{await su
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===btn));for(const id of ['condition','reservations','history'])document.getElementById(id+'Panel').classList.toggle('hidden',id!==btn.dataset.tab);if(btn.dataset.tab==='reservations')loadReservations();if(btn.dataset.tab==='history')loadHistory();}));
 document.getElementById('refreshReservations').addEventListener('click',loadReservations);document.getElementById('refreshHistory').addEventListener('click',loadHistory);
 let videoObjectUrl='';document.getElementById('videoFile').addEventListener('change',e=>{const file=e.target.files[0];const name=document.getElementById('videoName'),preview=document.getElementById('videoPreview');if(videoObjectUrl)URL.revokeObjectURL(videoObjectUrl);if(!file){name.textContent='';preview.classList.add('hidden');return;}name.textContent=file.name+' · '+(file.size/1024/1024).toFixed(1)+' MB';videoObjectUrl=URL.createObjectURL(file);preview.src=videoObjectUrl;preview.classList.remove('hidden');});
-document.getElementById('reportForm').addEventListener('submit',async e=>{e.preventDefault();if(!supabase)return;const {data:{user}}=await supabase.auth.getUser();if(!user){status('saveStatus','Please sign in again.',true);return;}const report={report_date:manilaDate(),sea_wave:new FormData(e.currentTarget).get('sea_wave'),weather:new FormData(e.currentTarget).get('weather'),visibility:new FormData(e.currentTarget).get('visibility'),crowd:new FormData(e.currentTarget).get('crowd'),field_note:document.getElementById('fieldNote').value,is_published:true,updated_by:user.id,updated_at:new Date().toISOString()};const file=document.getElementById('videoFile').files[0];status('saveStatus','Saving report...');if(file){if(file.size>200*1024*1024){status('saveStatus','Video exceeds the 200 MB limit.',true);return;}const ext=(file.name.split('.').pop()||'mp4').toLowerCase();const path=manilaDate()+'/daily-'+Date.now()+'.'+ext;const {error:uploadError}=await supabase.storage.from('daily-videos').upload(path,file,{upsert:true,contentType:file.type});if(uploadError){status('saveStatus','Video upload failed: '+uploadError.message,true);return;}report.video_path=path;}else{const {data:old}=await supabase.from('daily_conditions').select('video_path').eq('report_date',manilaDate()).maybeSingle();if(old?.video_path)report.video_path=old.video_path;}const {error}=await supabase.from('daily_conditions').upsert(report,{onConflict:'report_date'});if(error){status('saveStatus',error.message,true);return;}status('saveStatus','Saved and published successfully.');document.getElementById('videoFile').value='';});
+async function saveDailyReport(){
+ const btn=document.getElementById('saveReportBtn');
+ const form=document.getElementById('reportForm');
+ const values={};
+ for(const key of ['sea_wave','weather','visibility','crowd']){
+  const selected=form.querySelector('input[name="'+key+'"]:checked');
+  if(!selected){status('saveStatus','Please select an option for '+key.replace('_',' / ').toUpperCase()+'.',true);return;}
+  values[key]=selected.value;
+ }
+ if(!supabase){status('saveStatus','Supabase is not connected.',true);return;}
+ btn.disabled=true;status('saveStatus','Saving report...');
+ try{
+  const {data:{user},error:userError}=await supabase.auth.getUser();
+  if(userError||!user)throw new Error(userError?.message||'Please sign in again.');
+  const report={report_date:manilaDate(),...values,field_note:document.getElementById('fieldNote').value,is_published:true,updated_by:user.id,updated_at:new Date().toISOString()};
+  const file=document.getElementById('videoFile').files[0];
+  if(file){
+   if(file.size>200*1024*1024)throw new Error('Video exceeds the 200 MB limit.');
+   const ext=(file.name.split('.').pop()||'mp4').toLowerCase();
+   const path=manilaDate()+'/daily-'+Date.now()+'.'+ext;
+   const {error:uploadError}=await supabase.storage.from('daily-videos').upload(path,file,{upsert:true,contentType:file.type});
+   if(uploadError)throw new Error('Video upload failed: '+uploadError.message);
+   report.video_path=path;
+  }else{
+   const {data:old,error:oldError}=await supabase.from('daily_conditions').select('video_path').eq('report_date',manilaDate()).maybeSingle();
+   if(oldError)throw oldError;
+   if(old&&old.video_path)report.video_path=old.video_path;
+  }
+  const {error}=await supabase.from('daily_conditions').upsert(report,{onConflict:'report_date'});
+  if(error)throw error;
+  status('saveStatus','Saved and published successfully.');
+  document.getElementById('videoFile').value='';
+ }catch(error){status('saveStatus',error.message||String(error),true);}
+ finally{btn.disabled=false;}
+}
+document.getElementById('saveReportBtn').addEventListener('click',saveDailyReport);
+document.getElementById('reportForm').addEventListener('submit',e=>{e.preventDefault();saveDailyReport();});
 supabase?.auth.getSession().then(async({data})=>{if(data.session){const {data:{user}}=await supabase.auth.getUser();const {data:admin}=await supabase.from('admin_users').select('user_id').eq('user_id',user.id).maybeSingle();if(admin){showApp(user);await loadReport();}}});
 </script>
 </body></html>
