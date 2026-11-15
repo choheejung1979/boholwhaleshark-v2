@@ -24,6 +24,28 @@
 .history-metrics strong .weather-value .weather-emoji{font-size:21px!important}
 .history-metrics strong .condition-value{padding:8px 13px!important}
 .history-metrics strong .weather-value{padding:8px 13px!important}
+/* Keep weather chip visually equal to the other condition chips */
+.history-metrics strong .weather-value .weather-emoji{
+  font-size:14px!important;
+  width:13px!important;height:13px!important;
+  line-height:13px!important;
+  display:inline-flex!important;
+  align-items:center!important;justify-content:center!important;
+  flex:0 0 13px!important;
+}
+.history-metrics strong .weather-value{
+  min-height:30px!important;
+  box-sizing:border-box!important;
+  gap:10px!important;
+  padding:7px 13px!important;
+  vertical-align:middle!important;
+}
+.history-metrics strong .condition-value{
+  min-height:30px!important;
+  box-sizing:border-box!important;
+  vertical-align:middle!important;
+}
+
 .history-note{color:rgba(255,255,255,.82)!important}
 @media(max-width:700px){.history-metrics strong .condition-value,.history-metrics strong .weather-value{gap:10px!important;padding:7px 10px!important}}
 .history-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px}.history-head h2{font:700 clamp(38px,5vw,64px)/.98 Sora,sans-serif;letter-spacing:-.06em}.history-head h2 em{color:#4caeba;font-style:normal}.history-card{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:26px 20px;border-top:1px solid rgba(3,32,45,.12);align-items:center}.history-card:last-child{border-bottom:1px solid rgba(3,32,45,.12)}.history-date{font:26px 'Bebas Neue',sans-serif;color:#17323b}.history-date small{display:block;font:11px 'DM Sans',sans-serif;color:#7b898e;margin-top:5px}.history-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.history-metrics span{display:block;color:#7b898e;font:11px 'Bebas Neue',sans-serif;letter-spacing:.1em}.history-metrics strong{display:block;font:700 17px Sora,sans-serif;margin-top:7px;color:#fff}.condition-value{display:inline-flex;align-items:center;gap:8px}.condition-dot{display:inline-block;width:10px;height:10px;flex:0 0 10px;border-radius:50%;box-shadow:0 0 0 3px rgba(16,36,44,.06)}.condition-dot.blue{background:#2999e8}.condition-dot.yellow{background:#f2bd36}.condition-dot.red{background:#e65353}.weather-value{display:inline-flex;align-items:center;gap:8px}.weather-emoji{font-family:system-ui,sans-serif;font-size:19px;line-height:1}.condition-value,.weather-value{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;border-radius:9px;background:#0b3443;color:#fff!important;font-size:1em;font-weight:700;line-height:1.25;white-space:nowrap}.condition-dot{width:11px;height:11px;flex:0 0 11px;box-shadow:0 0 0 3px rgba(255,255,255,.13)}.weather-emoji{font-size:22px;line-height:1}.history-note{color:#68777c;font-size:12px;line-height:1.6;margin-top:14px}.history-video{width:100%;max-height:260px;margin-top:16px;border-radius:12px;background:#061c28}.history-empty{padding:35px;text-align:center;color:#718087;background:rgba(255,255,255,.55);border-radius:14px}@media(max-width:700px){.history-head{display:block}.history-card{grid-template-columns:1fr;gap:14px}.history-metrics{grid-template-columns:1fr 1fr}}</style></head>
