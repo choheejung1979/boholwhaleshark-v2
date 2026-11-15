@@ -250,7 +250,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header-actions">
-      <a class="book-now-link" href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">Book Now</a>
+      <a class="book-now-link" href="booking.html">Book Now</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -259,7 +259,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       <a href="#today">Whale Shark Journal</a>
       <a href="#tour-types">Tour Types</a>
       <a href="#faq">FAQ</a>
-      <a href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">Book Now</a>
+      <a href="booking.html">Book Now</a>
     </div>
   </header>
   <main>
@@ -506,7 +506,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
         <p id="tourModalOverview"></p>
         <div id="tourModalExtras" class="tour-modal-extras"></div>
         <div class="tour-modal-actions">
-          <span class="tour-booking-coming">BOOKING PAGE COMING SOON</span>
+          <a class="tour-booking-coming" id="tourModalBook" href="booking.html">BOOK THIS TOUR →</a>
           <a class="tour-modal-whatsapp" id="tourModalWhatsApp" href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">ASK ABOUT THIS TOUR ↗</a>
         </div>
       </section>
@@ -647,8 +647,8 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       </div>
       <div>
         <h4>BOOKING</h4>
-        <a href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">Reserve a Tour</a>
-        <a href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">Check Dates</a>
+        <a href="booking.html">Reserve a Tour</a>
+        <a href="booking.html">Check Dates</a>
       </div>
     </div>
     <div class="footer-policies"><a href="#contact">Customer Service / Contact</a></div><div class="container footer-bottom">
@@ -683,6 +683,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
             (t.note?'<section class="tour-modal-extra-section"><h3>PLEASE NOTE</h3><p>'+t.note+'</p></section>':'');
         }
         document.getElementById('tourModalWhatsApp').href='https://api.whatsapp.com/send?phone=639178754864&text='+encodeURIComponent('Hello Bohol Whale Shark! I would like to ask about the '+t.title+' tour.');
+        document.getElementById('tourModalBook').href='booking.html?tour='+encodeURIComponent(btn.dataset.tour);
         modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('tour-modal-open');
         modal.querySelector('.tour-modal-close').focus();
       }));
