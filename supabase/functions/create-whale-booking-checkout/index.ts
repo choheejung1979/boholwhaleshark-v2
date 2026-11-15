@@ -1,0 +1,15 @@
+import{createClient}from"https://esm.sh/@supabase/supabase-js@2";
+const P={ticket:{name:"Ticket Only",Filipino:1250,Foreigner:1920},transfer:{name:"Pick-up & Drop-off",Filipino:2150,Foreigner:2820},private:{name:"Private Tour",Filipino:3830,Foreigner:4500},combo:{name:"Whale Shark + Napaling",Filipino:5330,Foreigner:6000}};
+const cors={"Access-Control-Allow-Origin":"https://boholwhaleshark.com","Access-Control-Allow-Headers":"authorization, x-client-info, apikey, content-type","Access-Control-Allow-Methods":"POST, OPTIONS"};
+const out=(v,s=200)=>new Response(JSON.stringify(v),{status:s,headers:{...cors,"Content-Type":"application/json"}});
+Deno.serve(async req=>{if(req.method==="OPTIONS")return new Response("ok",{headers:cors});if(req.method!=="POST")return out({error:"Method not allowed"},405);try{
+const b=await req.json(),p=P[b.tour_key],r=b.rate_category,n=Number(b.guests);
+if(!p||!["Filipino","Foreigner"].includes(r))return out({error:"Invalid tour or rate category"},400);
+if(!Number.isInteger(n)||n<1||n>30||!/^\d{4}-\d{2}-\d{2}$/.test(b.tour_date||"")||!b.customer_name?.trim()||!b.whatsapp?.trim()||!b.email?.trim())return out({error:"Please complete all required fields"},400);
+const unit=p[r],total=unit*n,db=createClient(Deno.env.get("SUPABASE_URL")!,Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!),code="BWS-"+Date.now().toString(36).toUpperCase()+"-"+crypto.randomUUID().slice(0,6).toUpperCase();
+const {data:row,error}=await db.from("reservations").insert({booking_code:code,tour_key:b.tour_key,tour_name:p.name,rate_category:r,unit_price:unit,guests:n,total_amount:total,tour_date:b.tour_date,customer_name:b.customer_name.trim(),hotel:b.hotel||"",whatsapp:b.whatsapp.trim(),email:b.email.trim(),special_request:b.special_request||"",payment_status:"pending"}).select("id").single();if(error)throw error;
+const payload={data:{attributes:{line_items:[{name:p.name+" · "+r+" · "+code,amount:total*100,currency:"PHP",quantity:1}],payment_method_types:["card","gcash","qrph"],success_url:"https://boholwhaleshark.com/booking-success.html?booking="+encodeURIComponent(code),cancel_url:"https://boholwhaleshark.com/booking.html?cancelled=1&booking="+encodeURIComponent(code),reference_number:code,send_email_receipt:true,metadata:{reservation_id:row.id,booking_code:code,rate_category:r,tour_date:b.tour_date,guests:String(n)}}}};
+const res=await fetch("https://api.paymongo.com/v2/checkout_sessions",{method:"POST",headers:{Authorization:"Basic "+btoa(Deno.env.get("PAYMONGO_SECRET_KEY")+":"),"Content-Type":"application/json"},body:JSON.stringify(payload)}),result=await res.json(),url=result?.data?.attributes?.checkout_url,sid=result?.data?.id;
+if(!res.ok||!url){await db.from("reservations").update({payment_status:"failed"}).eq("id",row.id);return out({error:"PayMongo checkout failed",details:result},502)}
+await db.from("reservations").update({checkout_session_id:sid,updated_at:new Date().toISOString()}).eq("id",row.id);return out({checkout_url:url,booking_code:code});
+}catch(e){console.error(e);return out({error:e.message||"Server error"},500)}});
