@@ -1,1 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bohol Whale Shark</title><link rel="canonical" href="https://boholwhaleshark.com/#today"><meta http-equiv="refresh" content="0;url=/#today"></head><body><p>Opening <a href="/#today">Bohol Whale Shark</a>…</p><script>window.location.replace("/#today");</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Today's Whaleshark | Bohol Whale Shark</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="pages.css"><link rel="stylesheet" href="redesign.css"><link rel="stylesheet" href="subpages.css"><link rel="stylesheet" href="v2.css"><link rel="stylesheet" href="header-theme.css?v=20260912-2">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.today-report-date{display:flex;align-items:center;gap:12px;margin:22px 0 0;padding:14px 18px;border:1px solid rgba(53,212,223,.25);background:rgba(255,255,255,.07);width:max-content;max-width:100%;color:#fff}.today-report-date span{font:11px 'Bebas Neue',sans-serif;letter-spacing:.14em;color:var(--aqua)}.today-report-date strong{font:600 14px Sora,sans-serif}.today-video-section{padding:85px 0;background:#06283a}.today-video-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}.today-video-frame{width:100%;aspect-ratio:16/9;background:#031d2d;border:1px solid rgba(255,255,255,.15);border-radius:16px;overflow:hidden}.today-video-frame video{width:100%;height:100%;object-fit:contain}.today-video-copy h2{font:700 clamp(35px,4vw,54px)/.98 Sora,sans-serif;letter-spacing:-.05em;color:#fff}.today-video-copy h2 em{font-family:'Great Vibes',cursive;color:var(--aqua);font-style:normal}.today-video-copy p{color:rgba(255,255,255,.58);line-height:1.8;font-size:13px}.today-report-empty{color:#7b898e;font:600 13px Sora,sans-serif}.today-history-link{display:inline-flex;margin-top:26px;padding:13px 17px;border:1px solid rgba(53,212,223,.35);color:#087d8a;font-size:11px;font-weight:700;letter-spacing:.08em;text-decoration:none}.today-history-link:hover{background:rgba(53,212,223,.08)}
+@media(max-width:800px){.today-video-grid{grid-template-columns:1fr}.today-report-date{width:100%}.update-metrics{grid-template-columns:1fr 1fr}.update-metrics>div:nth-child(2){border-right:0}.update-metrics>div:nth-child(3),.update-metrics>div:nth-child(4){border-top:1px solid rgba(3,32,45,.1)}}
+</style>
+</head>
+<body class="inner-page">
+<header class="site-header" id="site-header">
+<a class="brand" href="index.html"><img class="site-logo" src="https://cdn.jsdelivr.net/gh/choheejung1979/boholwhaleshark-v2@main/assets/BW%20logo.png?v=2" alt="Bohol Whale Shark"></a>
+<nav class="desktop-nav"><a href="today.html">Today's Whaleshark</a><a href="history.html">Condition History</a><a href="tour.html">Tour Types</a><a href="qna.html">FAQ</a></nav>
+<div class="header-actions"><a class="book-now-link" href="booking.html">Book Now</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button></div>
+<div class="mobile-menu" aria-hidden="true"><a href="today.html">Today's Whaleshark</a><a href="history.html">Condition History</a><a href="tour.html">Tour Types</a><a href="qna.html">FAQ</a><a href="booking.html">Book Now</a></div>
+</header>
+<main>
+<section class="inner-hero"><div class="container"><p class="eyebrow" style="color:var(--aqua)">DAILY FIELD JOURNAL · BOHOL</p><h1>Today's Whale<br><em>Shark.</em></h1><p class="page-intro">A daily snapshot of sea conditions, weather, underwater visibility and visitor activity in Bohol.</p><div class="today-report-date"><span>REPORT DATE</span><strong id="todayDate">Loading date...</strong></div></div></section>
+<section class="inner-content"><div class="container">
+<div class="update-current-head"><div><p class="section-kicker dark-kicker"><span>LIVE</span> TODAY'S FIELD REPORT</p><h2>Today's whale shark<br><em>conditions.</em></h2></div><div class="current-status"><span class="live-dot"></span><strong id="reportStatus">TODAY'S REPORT</strong><small id="updatedAt">Checking latest update</small></div></div>
+<div class="update-metrics" id="conditionMetrics">
+<div><span>SEA / WAVE</span><strong id="seaWave">—</strong><small>Sea surface condition</small></div>
+<div><span>WEATHER</span><strong id="weather">—</strong><small>Local weather</small></div>
+<div><span>VISIBILITY</span><strong id="visibility">—</strong><small>Underwater clarity</small></div>
+<div><span>CROWD</span><strong id="crowd">—</strong><small>Visitor level</small></div>
+</div>
+<div class="field-note"><div><p class="section-kicker dark-kicker"><span>FIELD NOTE</span> TODAY</p><h3 id="fieldNoteTitle">Daily information, updated from the field.</h3></div><p id="fieldNote">Today's field conditions will appear here after the report is published.</p></div>
+</div></section>
+<section class="today-video-section"><div class="container today-video-grid"><div class="today-video-frame" id="videoFrame"><div class="today-report-empty" style="height:100%;display:grid;place-items:center;color:rgba(255,255,255,.5)">Today's video has not been uploaded yet.</div></div><div class="today-video-copy"><p class="section-kicker"><span>01</span> TODAY'S VIDEO</p><h2>See today's<br><em>ocean moments.</em></h2><p>Watch the latest footage uploaded directly from the field. Video updates are added by our team as the day unfolds.</p><a class="today-history-link" href="history.html">VIEW CONDITION HISTORY ↗</a></div></div></section>
+</main>
+<footer class="site-footer section-dark"><div class="footer-policies"><a href="policies.html#terms">Terms and Conditions</a><a href="policies.html#privacy">Privacy Policy</a><a href="policies.html#refunds">Return and Refund Policy</a><a href="policies.html#contact">Customer Service / Contact</a><a href="policies.html#disputes">Dispute Resolution Policy</a></div><div class="container footer-bottom"><span>© 2026 Bohol Whale Shark</span><a href="index.html">Back to Home</a></div></footer>
+<script src="script.js"></script><script src="whaleshark-config.js"></script>
+<script type="module">
+import{createClient}from'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const cfg=window.BW_SUPABASE_CONFIG||{};
+const fmtDate=()=>new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Manila',weekday:'long',year:'numeric',month:'long',day:'numeric'}).format(new Date());
+const isoDate=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+document.getElementById('todayDate').textContent=fmtDate();
+if(cfg.url&&cfg.anonKey){
+ const db=createClient(cfg.url,cfg.anonKey);
+ const {data,error}=await db.from('daily_conditions').select('*').eq('report_date',isoDate()).eq('is_published',true).maybeSingle();
+ if(error){document.getElementById('reportStatus').textContent='REPORT UNAVAILABLE';document.getElementById('updatedAt').textContent='Please check again later';}
+ else if(!data){document.getElementById('reportStatus').textContent='AWAITING UPDATE';document.getElementById('updatedAt').textContent='No report published for today yet';document.getElementById('fieldNote').textContent="Today's conditions have not been updated yet. Please check back later."; }
+ else{
+  document.getElementById('reportStatus').textContent='REPORT PUBLISHED';
+  document.getElementById('updatedAt').textContent='Updated '+new Date(data.updated_at).toLocaleTimeString('en-US',{timeZone:'Asia/Manila',hour:'numeric',minute:'2-digit'});
+  document.getElementById('seaWave').textContent=data.sea_wave;
+  document.getElementById('weather').textContent=data.weather;
+  document.getElementById('visibility').textContent=data.visibility;
+  document.getElementById('crowd').textContent=data.crowd;
+  document.getElementById('fieldNote').textContent=data.field_note||"Today's field report has been updated by our local team.";
+  if(data.video_path){const url=db.storage.from('daily-videos').getPublicUrl(data.video_path).data.publicUrl;const v=document.createElement('video');v.controls=true;v.playsInline=true;v.preload='metadata';v.src=url;const frame=document.getElementById('videoFrame');frame.textContent='';frame.appendChild(v);}
+ }
+}else{
+ document.getElementById('reportStatus').textContent='SYSTEM SETUP';
+ document.getElementById('updatedAt').textContent='Daily report connection pending';
+ document.getElementById('fieldNote').textContent='The daily report will appear here once the content system is connected.';
+}
+</script>
+</body></html>
