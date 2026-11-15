@@ -505,18 +505,105 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       </section>
     </div>
     <section class="journal-preview" id="experience">
-      <div class="experience-panel">
-        <div class="experience-copy-panel">
-          <div>
-            <p class="section-kicker"><span>03</span> THE EXPERIENCE</p>
-            <h2>The experience<br>of a <em>lifetime.</em></h2>
-          </div>
-          <p>Swim alongside gentle giants in their natural environment. Respect the ocean, create unforgettable memories.</p>
+      <div class="experience-intro">
+        <div class="experience-intro-copy">
+          <p class="section-kicker"><span>03</span> THE EXPERIENCE</p>
+          <h2>Meet the ocean's<br><em>gentle giant.</em></h2>
+          <p class="experience-lead">The whale shark is the largest fish in the ocean — a calm, filter-feeding giant that moves through warm tropical waters. Despite its enormous size, it feeds mainly on tiny plankton and other small organisms.</p>
+          <p>Seeing one in the water is a rare reminder of how extraordinary the marine world can be. The best encounter is a respectful one: observe, give it space, and let the animal decide where to go.</p>
         </div>
-        <div class="experience-visual-panel" aria-hidden="true"></div>
+        <div class="experience-intro-visual"><div class="experience-image-caption"><span>RHINCODON TYPUS</span><strong>The world's largest fish</strong></div></div>
+      </div>
+      <div class="conservation-panel">
+        <div class="conservation-heading"><p class="experience-label">OUR OCEAN, OUR RESPONSIBILITY</p><h3>Protect the giants.<br><em>Preserve the blue.</em></h3></div>
+        <div class="conservation-copy"><p>Whale sharks are wild animals, not attractions that can be directed or controlled. Their future depends on healthy oceans and responsible human behavior.</p><p>Every visitor has a role to play. Keep a respectful distance, follow the crew's instructions, and never interfere with a whale shark's natural movement. A good memory should never come at the expense of marine life.</p></div>
+      </div>
+      <div class="experience-rules">
+        <div class="experience-rules-heading"><p class="experience-label">BEFORE YOU ENTER THE WATER</p><h3>Safety &amp; encounter<br><em>guidelines.</em></h3><p>These simple rules help keep you safe while reducing stress and disturbance to whale sharks and other marine life.</p></div>
+        <div class="experience-rules-grid">
+          <article class="experience-rule-card do-card">
+            <div class="experience-rule-title"><span class="rule-symbol">✓</span><div><span class="rule-overline">RESPONSIBLE BEHAVIOR</span><h4>DO'S</h4></div></div>
+            <ul>
+              <li>Pay close attention to your guide, boat crew, and local authorities before and during the activity.</li>
+              <li>Wear your life jacket and snorkeling gear correctly whenever required.</li>
+              <li>Enter and leave the water slowly, and only when your guide gives permission.</li>
+              <li>Keep at least <strong>5 metres from the head</strong> and <strong>6 metres from the sides and tail</strong> of the whale shark.</li>
+              <li>Stay calm and quiet. Let the whale shark swim freely without trying to follow it.</li>
+              <li>Choose reef-safe sunscreen, or avoid applying sunscreen immediately before the tour where possible.</li>
+              <li>Respect all marine life and comply with marine park rules throughout the visit.</li>
+            </ul>
+          </article>
+          <article class="experience-rule-card dont-card">
+            <div class="experience-rule-title"><span class="rule-symbol">×</span><div><span class="rule-overline">WHAT TO AVOID</span><h4>DON'TS</h4></div></div>
+            <ul>
+              <li>Never touch, ride, chase, corner, or obstruct a whale shark.</li>
+              <li>Do not feed wildlife or throw food, rubbish, or other objects into the sea.</li>
+              <li>Avoid flash photography, underwater lights, and bright strobes.</li>
+              <li>Do not shout, splash excessively, or make sudden movements that may disturb marine life.</li>
+              <li>Do not collect corals, shells, or any other marine organisms.</li>
+              <li>Never jump from the boat unless your guide specifically instructs you to do so.</li>
+              <li>Do not enter the water without clearance from your guide or boat crew.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="experience-important">
+        <div class="important-icon">!</div><div>
+          <p class="experience-label">PLEASE READ BEFORE BOOKING</p><h4>Important information</h4>
+          <ul>
+            <li>Whale sharks are wild. Sightings are not guaranteed on every trip.</li>
+            <li>Tour operation may change due to weather, sea conditions, or local marine regulations.</li>
+            <li>For your safety and the animals' welfare, follow all instructions from your guide and crew.</li>
+            <li>Guests participate at their own risk and are responsible for following the safety briefing.</li>
+            <li>Anyone who ignores safety instructions or harms/disturbs wildlife may be asked to leave the activity without a refund, subject to applicable law and the operator's policies.</li>
+          </ul>
+          <p class="experience-thankyou">Thank you for helping protect whale sharks and the ocean they call home. Responsible encounters today help preserve these remarkable animals for tomorrow.</p>
+        </div>
       </div>
     </section>
-    
+    <style>
+      .journal-preview{padding:72px 0 88px!important}
+      .experience-intro{width:min(calc(100% - 72px),var(--max));margin:0 auto 24px;display:grid;grid-template-columns:1fr .9fr;min-height:440px;border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;background:rgba(6,52,70,.48)}
+      .experience-intro-copy{padding:52px 54px;display:flex;flex-direction:column;justify-content:center}
+      .experience-intro-copy h2,.experience-rules-heading h3,.conservation-heading h3{font:700 clamp(34px,4.3vw,56px)/1.02 Sora,sans-serif;letter-spacing:-.05em;color:#fff;margin:22px 0}
+      .experience-intro-copy h2 em,.conservation-heading h3 em,.experience-rules-heading h3 em{font-style:normal;color:#7beaf2}
+      .experience-intro-copy p:not(.section-kicker){max-width:560px;color:rgba(255,255,255,.72);font:400 14px/1.85 'DM Sans',sans-serif;margin:0 0 14px}
+      .experience-intro-copy .experience-lead{color:#fff!important;font-size:16px!important}
+      .experience-intro-visual{position:relative;min-height:360px;background:linear-gradient(0deg,rgba(2,17,28,.75),transparent 55%),url('assets/whale-shark-napaling-banner.png') center/cover no-repeat}
+      .experience-image-caption{position:absolute;left:28px;right:24px;bottom:25px;color:#fff}
+      .experience-image-caption span{display:block;color:#7beaf2;font:700 9px Sora,sans-serif;letter-spacing:.18em;margin-bottom:7px}
+      .experience-image-caption strong{font:600 19px Sora,sans-serif}
+      .conservation-panel{width:min(calc(100% - 72px),var(--max));margin:0 auto 24px;padding:38px 46px;display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;border:1px solid rgba(123,234,242,.2);border-radius:18px;background:linear-gradient(115deg,rgba(7,69,85,.78),rgba(5,35,52,.8))}
+      .experience-label{font:700 9px Sora,sans-serif;letter-spacing:.18em;color:#7beaf2;margin:0 0 12px}
+      .conservation-heading h3{font-size:clamp(29px,3.5vw,42px);margin:0}
+      .conservation-copy{align-self:center}
+      .conservation-copy p{color:rgba(255,255,255,.76);font:400 14px/1.85 'DM Sans',sans-serif;margin:0 0 12px}
+      .experience-rules{width:min(calc(100% - 72px),var(--max));margin:0 auto 24px}
+      .experience-rules-heading{max-width:650px;margin:0 0 24px}
+      .experience-rules-heading h3{margin:0 0 13px;font-size:clamp(31px,3.8vw,46px)}
+      .experience-rules-heading>p:last-child{color:rgba(255,255,255,.65);font:400 13px/1.75 'DM Sans',sans-serif;max-width:560px}
+      .experience-rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+      .experience-rule-card{padding:29px 30px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:rgba(255,255,255,.045)}
+      .experience-rule-title{display:flex;align-items:center;gap:13px;margin-bottom:20px}
+      .rule-symbol{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;font:700 20px Sora,sans-serif}
+      .do-card .rule-symbol{background:rgba(61,207,163,.14);color:#5de0b5}
+      .dont-card .rule-symbol{background:rgba(255,126,126,.13);color:#ff9b9b}
+      .rule-overline{display:block;color:rgba(255,255,255,.48);font:700 8px Sora,sans-serif;letter-spacing:.14em;margin-bottom:4px}
+      .experience-rule-title h4{font:700 21px Sora,sans-serif;color:#fff;margin:0}
+      .experience-rule-card ul,.experience-important ul{list-style:none;padding:0;margin:0}
+      .experience-rule-card li,.experience-important li{position:relative;padding-left:19px;margin:0 0 12px;color:rgba(255,255,255,.77);font:400 12px/1.75 'DM Sans',sans-serif}
+      .experience-rule-card li:before{position:absolute;left:0;top:0;font-weight:700}
+      .do-card li:before{content:'✓';color:#5de0b5}
+      .dont-card li:before{content:'×';color:#ff9b9b}
+      .experience-rule-card li strong{color:#fff}
+      .experience-important{width:min(calc(100% - 72px),var(--max));margin:0 auto;padding:29px 34px;display:grid;grid-template-columns:38px 1fr;gap:17px;border:1px solid rgba(255,201,122,.23);border-radius:17px;background:rgba(116,76,28,.13)}
+      .important-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(255,201,122,.15);color:#ffd18b;font:700 18px Sora,sans-serif}
+      .experience-important h4{font:700 18px Sora,sans-serif;color:#fff;margin:0 0 14px}
+      .experience-important li{margin-bottom:7px}
+      .experience-thankyou{margin:16px 0 0;color:#b9eaf0;font:600 13px/1.75 'DM Sans',sans-serif}
+      @media(max-width:850px){.experience-intro,.conservation-panel{grid-template-columns:1fr}.experience-intro-visual{min-height:300px}.experience-copy-panel{padding:40px 30px}.experience-intro-copy{padding:38px 30px}.conservation-panel{gap:20px;padding:30px}}
+      @media(max-width:700px){.journal-preview{padding:45px 0 58px!important}.experience-intro,.conservation-panel,.experience-rules,.experience-important{width:calc(100% - 32px)}.experience-intro{grid-template-columns:1fr}.experience-intro-visual{min-height:240px}.experience-rules-grid{grid-template-columns:1fr}.experience-rule-card{padding:24px 21px}.experience-important{grid-template-columns:1fr;padding:24px 21px;gap:12px}}
+    </style>
     <section class="onepage-faq-section" id="faq">
       <div class="container">
         <div class="section-topline"><p class="section-kicker"><span>04</span> FAQ</p></div>
