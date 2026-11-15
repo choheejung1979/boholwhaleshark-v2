@@ -139,7 +139,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 .onepage-tour-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:320px;padding:30px;border-radius:22px;overflow:hidden;border:1px solid rgba(123,234,242,.22);background:linear-gradient(145deg,rgba(8,70,91,.92),rgba(2,27,43,.96));box-shadow:0 18px 48px rgba(0,0,0,.22);transition:transform .3s,border-color .3s,box-shadow .3s}
 .onepage-tour-card:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 85% 20%,rgba(54,212,226,.22),transparent 35%),linear-gradient(145deg,rgba(5,46,65,.06),rgba(1,17,29,.52))}
 .onepage-tour-card:hover{transform:translateY(-5px);border-color:rgba(123,234,242,.65);box-shadow:0 22px 55px rgba(0,0,0,.30),0 0 28px rgba(33,212,228,.1)}
-.onepage-tour-card.ticket-featured{background-image:linear-gradient(145deg,rgba(8,70,91,.92),rgba(2,27,43,.96))}
+.onepage-tour-card.ticket-featured{padding:20px;min-height:320px;background-image:linear-gradient(180deg,transparent 72%,rgba(1,15,27,.18)),url("https://cdn.jsdelivr.net/gh/choheejung1979/boholwhaleshark-v2@main/assets/ticket-only-banner.jpg")!important;background-size:cover!important;background-position:center!important}
+.onepage-tour-card.ticket-featured:before{display:none}
+.onepage-tour-card.ticket-featured .onepage-tour-kicker,.onepage-tour-card.ticket-featured .onepage-tour-copy{display:none}
+.onepage-tour-card.ticket-featured .onepage-tour-bottom{position:absolute;left:18px;bottom:18px;justify-content:flex-start;gap:12px;padding:9px 12px;border:1px solid rgba(255,255,255,.2);border-radius:13px;background:rgba(2,20,34,.82);backdrop-filter:blur(8px)}
+.onepage-tour-card.ticket-featured .onepage-tour-bottom strong{font-size:25px;color:#fff}
+@media(max-width:600px){.onepage-tour-card.ticket-featured{min-height:250px;padding:14px}.onepage-tour-card.ticket-featured .onepage-tour-bottom{left:12px;bottom:12px;padding:7px 9px;gap:8px}.onepage-tour-card.ticket-featured .onepage-tour-bottom strong{font-size:21px}}
 .onepage-tour-kicker{font:18px 'Bebas Neue',sans-serif;letter-spacing:.12em;color:#7beaf2}
 .onepage-tour-copy{max-width:460px;margin:32px 0 26px}
 .onepage-tour-copy h3{font:700 clamp(25px,2.5vw,34px)/1.1 Sora,sans-serif;color:#fff;margin:0 0 12px}
