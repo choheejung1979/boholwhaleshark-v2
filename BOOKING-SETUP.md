@@ -14,3 +14,5 @@ Prices are per person and recalculated server-side: Ticket 1250/1920; Transfer 2
 5. Test with a PayMongo test key and test webhook before switching to live keys.
 
 The webhook verifies the PayMongo signature before updating a reservation. The public booking form never receives the PayMongo secret or Supabase service-role key.
+
+6. Deploy the public status lookup: `supabase functions deploy get-whale-booking-status`. It only returns payment status for a high-entropy booking reference.
