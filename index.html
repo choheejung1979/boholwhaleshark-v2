@@ -418,8 +418,8 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
               <tr>
                 <th scope="col">WHAT'S INCLUDED</th>
                 <th scope="col"><span>01 / BASIC</span>Ticket Only<strong>₱1,920</strong></th>
-                <th scope="col"><span>02 / TRANSFER</span>Pick-up &amp; Drop-off<strong>₱2,820</strong></th>
-                <th scope="col" class="tour-compare-featured"><span>03 / PRIVATE</span>Private Tour<strong>₱4,500</strong></th>
+                <th scope="col"><span class="compare-bubble bubble-value">GREAT VALUE</span><span>02 / TRANSFER</span>Pick-up &amp; Drop-off<strong>₱2,820</strong></th>
+                <th scope="col" class="tour-compare-featured"><span class="compare-bubble bubble-vip">VIP</span><span>03 / PRIVATE</span>Private Tour<strong>₱4,500</strong></th>
                 <th scope="col"><span>04 / COMBO</span>Whale Shark + Napaling<strong>₱6,000</strong></th>
               </tr>
             </thead>
@@ -463,8 +463,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       .tour-compare-table tbody th{background:#fff;text-align:left;padding-left:22px;color:#34474e;font:600 12px 'DM Sans',sans-serif;min-width:205px}
       .tour-compare-table tbody td{background:#fff;color:#34474e;font-size:12px}
       .tour-compare-table tbody tr:last-child th,.tour-compare-table tbody tr:last-child td{border-bottom:1px solid #e5ebed}
-      .tour-compare-table .tour-compare-featured{background:#f0f8f9}
-      .tour-compare-table thead .tour-compare-featured{box-shadow:inset 0 3px #16869a}
+      .tour-compare-table .tour-compare-featured{background:#f7f9f9}
+      .tour-compare-table thead .tour-compare-featured{box-shadow:none}
+      .tour-compare-table thead th .compare-bubble{display:table;width:max-content;margin:0 auto 9px;padding:5px 11px;border-radius:999px;font:800 9px Sora,sans-serif;letter-spacing:.1em;line-height:1.2;position:relative}
+      .tour-compare-table thead th .compare-bubble:after{content:"";position:absolute;left:50%;bottom:-4px;width:8px;height:8px;transform:translateX(-50%) rotate(45deg);background:inherit}
+      .tour-compare-table thead th .bubble-value{background:#e5f5eb;color:#25834b;border:1px solid #c7e8d1}
+      .tour-compare-table thead th .bubble-vip{background:#f1eaff;color:#7042a4;border:1px solid #ddccf5}
       .compare-yes{display:block;color:#078b78;font-size:19px;line-height:1.1}
       .tour-compare-table tbody tr.compare-highlight-row th{background:#f2faf9;color:#173c43;font-weight:700}
       .tour-compare-table tbody tr.compare-highlight-row td{background:#f7fcfb}
