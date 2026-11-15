@@ -166,14 +166,14 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
           </div>
           <div class="live-status">
             <span class="live-dot"></span>
-            <strong>FIELD REPORT</strong>
-            <small>Updated daily</small>
+            <strong id="homeReportStatus">FIELD REPORT</strong>
+            <small id="homeUpdatedAt">Updated daily</small>
           </div>
         </div>
         <div class="today-update-grid">
           <div class="today-video-wrap">
             <div class="today-video-label"><span>Today's Field Video</span><span>Daily Update</span></div>
-            <video autoplay muted playsinline loop preload="auto">
+            <video id="todayFieldVideo" autoplay muted playsinline loop preload="metadata">
               <source src="assets/hero.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -183,17 +183,17 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
               <span class="today-info-title">Today's Field Report</span>
               <div class="live-status">
                 <span class="live-dot"></span>
-                <strong>FIELD REPORT</strong>
-                <small>Updated daily</small>
+                <strong id="homeReportStatus2">FIELD REPORT</strong>
+                <small id="homeUpdatedAt2">Updated daily</small>
               </div>
             </div>
             <div class="today-info-grid">
-              <div class="today-info-item"><span>SEA / WAVE</span><strong>CALM</strong><small>Wave conditions</small></div>
-              <div class="today-info-item"><span>WEATHER</span><strong>CLEAR</strong><small>Morning conditions</small></div>
-              <div class="today-info-item"><span>VISIBILITY</span><strong>GOOD</strong><small>Water clarity</small></div>
-              <div class="today-info-item"><span>CROWD</span><strong>LOW</strong><small>Expected today</small></div>
+              <div class="today-info-item"><span>SEA / WAVE</span><strong id="homeSeaWave">—</strong><small>Wave conditions</small></div>
+              <div class="today-info-item"><span>WEATHER</span><strong id="homeWeather">—</strong><small>Morning conditions</small></div>
+              <div class="today-info-item"><span>VISIBILITY</span><strong id="homeVisibility">—</strong><small>Water clarity</small></div>
+              <div class="today-info-item"><span>CROWD</span><strong id="homeCrowd">—</strong><small>Expected today</small></div>
             </div>
-            <p class="today-info-note">Field conditions are updated daily.</p>
+            <p class="today-info-note" id="homeFieldNote">Field conditions are updated daily.</p>
           </div>
         </div>
       </div>
@@ -402,5 +402,39 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
     </div>
   </footer>
   <script src="script.js?v=20261112-onepage"></script>
+  <script src="whaleshark-config.js"></script>
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    const cfg = window.BW_SUPABASE_CONFIG || {};
+    if (cfg.url && cfg.anonKey) {
+      const db = createClient(cfg.url, cfg.anonKey);
+      const date = new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      const labels = {
+        sea_wave: {'고요':'CALM','파도 있음':'SOME WAVES','파도 강함':'ROUGH'},
+        weather: {'맑음':'SUNNY','흐림':'CLOUDY','비 옴':'RAINY'},
+        visibility: {'좋음':'GOOD','적당함':'MODERATE','나쁨':'POOR'},
+        crowd: {'LOW':'LOW','적당함':'MODERATE','많음':'HIGH'}
+      };
+      try {
+        const {data, error} = await db.from('daily_conditions').select('*').eq('report_date', date).eq('is_published', true).maybeSingle();
+        if (!error && data) {
+          const put = (id, value) => { const el=document.getElementById(id); if(el) el.textContent=value || '—'; };
+          put('homeSeaWave', labels.sea_wave[data.sea_wave] || data.sea_wave);
+          put('homeWeather', labels.weather[data.weather] || data.weather);
+          put('homeVisibility', labels.visibility[data.visibility] || data.visibility);
+          put('homeCrowd', labels.crowd[data.crowd] || data.crowd);
+          put('homeFieldNote', data.field_note || 'Field conditions are updated daily.');
+          put('homeReportStatus','LIVE REPORT'); put('homeReportStatus2','LIVE REPORT');
+          const updated = data.updated_at ? new Date(data.updated_at).toLocaleString('en-US',{timeZone:'Asia/Manila',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' · Manila' : 'Updated today';
+          put('homeUpdatedAt',updated); put('homeUpdatedAt2',updated);
+          if(data.video_path){
+            const url=db.storage.from('daily-videos').getPublicUrl(data.video_path).data.publicUrl;
+            const video=document.getElementById('todayFieldVideo');
+            if(video){video.src=url;video.load();}
+          }
+        }
+      } catch(e) { console.error('Unable to load today field report',e); }
+    }
+  </script>
 </body>
 </html>
