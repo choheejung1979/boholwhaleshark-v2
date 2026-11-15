@@ -98,6 +98,18 @@
     .tour-modal-description,.tour-modal-panel>p{font:400 14px/1.75 'DM Sans',sans-serif;color:rgba(255,255,255,.84)}
     .tour-modal-price{font:700 25px Sora,sans-serif;color:#7beaf2;margin:22px 0}
     .tour-modal-divider{height:1px;background:rgba(255,255,255,.16);margin:20px 0}
+    .tour-modal-extras{display:grid;gap:22px;margin-top:22px}
+    .tour-modal-extra-section{padding:18px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.045)}
+    .tour-modal-extra-section h3{margin:0 0 12px}
+    .tour-modal-extra-section ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+    .tour-modal-extra-section li{position:relative;padding-left:19px;font:400 13px/1.65 'DM Sans',sans-serif;color:rgba(255,255,255,.86)}
+    .tour-modal-extra-section li:before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:#7beaf2}
+    .tour-modal-extra-section.not-included li:before{background:#f2a37e}
+    .tour-modal-extra-section p{margin:0;font:400 13px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.82)}
+    .tour-modal-extra-section .steps{counter-reset:ticket-step;display:grid;gap:10px}
+    .tour-modal-extra-section .step{display:flex;gap:11px;align-items:flex-start;font:400 13px/1.65 'DM Sans',sans-serif;color:rgba(255,255,255,.86)}
+    .tour-modal-extra-section .step:before{counter-increment:ticket-step;content:counter(ticket-step);flex:0 0 23px;height:23px;display:grid;place-items:center;border-radius:50%;background:rgba(123,234,242,.16);color:#7beaf2;font:700 11px Sora,sans-serif}
+
     .tour-modal-panel h3{font:700 10px Sora,sans-serif;letter-spacing:.15em;color:#7beaf2;margin:0 0 10px}
     .tour-modal-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px}
     .tour-booking-coming,.tour-modal-whatsapp{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:8px;font:700 10px Sora,sans-serif;letter-spacing:.06em;text-decoration:none}
@@ -404,6 +416,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
         <div class="tour-modal-divider"></div>
         <h3>TOUR OVERVIEW</h3>
         <p id="tourModalOverview"></p>
+        <div id="tourModalExtras" class="tour-modal-extras"></div>
         <div class="tour-modal-actions">
           <span class="tour-booking-coming">BOOKING PAGE COMING SOON</span>
           <a class="tour-modal-whatsapp" id="tourModalWhatsApp" href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">ASK ABOUT THIS TOUR ↗</a>
@@ -530,7 +543,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       const modal=document.getElementById('tourDetailsModal');
       if(!modal)return;
       const tours={
-        ticket:{number:'01 / TICKET ONLY',title:'Ticket Only',description:'The whale shark experience ticket for guests arranging their own transportation.',price:'₱1,920',overview:'Best for guests who already have their own transport and only need the whale shark tour ticket.'},
+        ticket:{number:'01 / TICKET ONLY',title:'Ticket Only',description:'A simple, budget-friendly option for guests who can arrange their own transportation and bring their own snorkeling equipment.',price:'₱1,920',overview:'Purchase your whale shark watching ticket in advance, then present it at the whale shark site for entry. This option covers the admission ticket only; transportation, a guide and equipment are not included.',included:['Whale shark watching ticket'],notIncluded:['Transportation to and from the whale shark site','Tour guide or personal assistance','Snorkeling equipment'],recommended:['Travelers who already have their own transportation','Guests who have their own snorkeling equipment','Budget-conscious travelers who prefer a simple ticket-only option','Confident swimmers or guests who are already familiar with the whale shark watching experience'],steps:['Purchase the Ticket Only option.','Receive your ticket after purchase.','Go to the whale shark site using your own transportation.','Show your ticket at the site before entering.'],note:'Please arrange your own transportation and bring any equipment you need. Check your ticket details and the latest operating information before heading to the site.'},
         transfer:{number:'02 / PICK-UP & DROP-OFF',title:'Pick-up & Drop-off Included',description:'A convenient option with pickup and drop-off arranged for your trip.',price:'₱2,820',overview:'Includes pickup and drop-off service. Please confirm your accommodation location and pickup details with our team.'},
         private:{number:'03 / PRIVATE TOUR',title:'Private Tour',description:'Enjoy the whale shark experience with a private arrangement for your own group.',price:'₱4,500',overview:'A private tour arrangement for your group. Contact our team to confirm the schedule and exact inclusions.'},
         combo:{number:'04 / PRIVATE COMBO',title:'Whale Shark + Napaling Private Tour',description:'Combine the whale shark experience with a private Napaling snorkeling trip.',price:'₱6,000',overview:'A private combination of the whale shark experience and Napaling. Contact our team to confirm the itinerary and inclusions.'}
@@ -543,6 +556,14 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
         document.getElementById('tourModalDescription').textContent=t.description;
         document.getElementById('tourModalPrice').textContent=t.price;
         document.getElementById('tourModalOverview').textContent=t.overview;
+        const extras=document.getElementById('tourModalExtras');
+        extras.innerHTML='';
+        if(t.included||t.notIncluded||t.recommended||t.steps||t.note){
+          const list=(heading,items,cls='')=>items&&items.length?'<section class="tour-modal-extra-section '+cls+'"><h3>'+heading+'</h3><ul>'+items.map(x=>'<li>'+x+'</li>').join('')+'</ul></section>':'';
+          extras.innerHTML=list('INCLUDED',t.included)+list('NOT INCLUDED',t.notIncluded,'not-included')+list('RECOMMENDED FOR',t.recommended)+
+            (t.steps&&t.steps.length?'<section class="tour-modal-extra-section"><h3>HOW IT WORKS</h3><div class="steps">'+t.steps.map(x=>'<div class="step">'+x+'</div>').join('')+'</div></section>':'')+
+            (t.note?'<section class="tour-modal-extra-section"><h3>PLEASE NOTE</h3><p>'+t.note+'</p></section>':'');
+        }
         document.getElementById('tourModalWhatsApp').href='https://api.whatsapp.com/send?phone=639178754864&text='+encodeURIComponent('Hello Bohol Whale Shark! I would like to ask about the '+t.title+' tour.');
         modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('tour-modal-open');
         modal.querySelector('.tour-modal-close').focus();
