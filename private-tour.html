@@ -28,6 +28,10 @@
     .ticket-kicker{font:700 10px Sora,sans-serif;letter-spacing:.18em;color:var(--ticket-accent);margin:0 0 12px}
     .ticket-intro h2,.ticket-section h2{font:700 clamp(26px,4vw,38px)/1.15 Sora,sans-serif;margin:0;color:#fff}
     .ticket-price{font:700 clamp(30px,4vw,42px) Sora,sans-serif;color:var(--ticket-accent);white-space:nowrap}
+    .dual-ticket-price{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+    .dual-ticket-price span{display:flex;align-items:baseline;gap:8px}
+    .dual-ticket-price span small{font:700 9px Sora,sans-serif;letter-spacing:.1em;color:rgba(255,255,255,.62)}
+    .dual-ticket-price em{font:600 9px Sora,sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.5);font-style:normal;margin-top:2px}
     .ticket-price small{display:block;font:600 10px Sora,sans-serif;letter-spacing:.15em;color:rgba(255,255,255,.56);text-align:right;margin-top:4px}
     .ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .ticket-panel{padding:25px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:linear-gradient(145deg,rgba(16,57,75,.72),rgba(5,28,43,.92))}
@@ -73,7 +77,7 @@
   <main>
     <section class="ticket-hero"><div class="ticket-hero-inner"><p class="ticket-eyebrow">03 / PRIVATE TOUR · BOHOL, PHILIPPINES</p><h1>PRIVATE<br><span>WHALE SHARK TOUR</span></h1><p>Enjoy a more personal whale shark experience with your own private guide, hotel pick-up and drop-off, snorkeling equipment and underwater photos.</p></div></section>
     <div class="ticket-wrap">
-      <div class="ticket-intro"><div><p class="ticket-kicker">YOUR TOUR AT A GLANCE</p><h2>Your group. Your guide.<br>Your private ocean experience.</h2></div><div class="ticket-price">₱4,500<small>PER PERSON · PHP</small></div></div>
+      <div class="ticket-intro"><div><p class="ticket-kicker">YOUR TOUR AT A GLANCE</p><h2>Your group. Your guide.<br>Your private ocean experience.</h2></div><div class="ticket-price dual-ticket-price"><span>₱3,830<small>FILIPINO</small></span><span>₱4,500<small>FOREIGNER</small></span><em>PER PERSON · PHP</em></div></div>
       <div class="ticket-grid">
         <section class="ticket-panel"><h3>✓ INCLUDED</h3><ul class="ticket-list">
           <li>Whale shark watching admission ticket</li>
