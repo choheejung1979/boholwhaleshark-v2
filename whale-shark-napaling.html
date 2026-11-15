@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Experience both whale shark watching and snorkeling at the beautiful Napaling point in one private tour, with hotel transfers, a dedicated guide, snorkeling gear, underwater photography and light snacks.">
+  <title>Whale Shark + Napaling Private Tour | Bohol Whale Shark</title>
+  <link rel="icon" type="image/png" href="assets/bw-favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="redesign.css">
+  <link rel="stylesheet" href="cta.css">
+  <link rel="stylesheet" href="button-refine.css">
+  <link rel="stylesheet" href="header-theme.css">
+  <style>
+    :root{--ticket-accent:#9bd8f2;--ticket-ink:#082a3a}
+    body{background:#061b2a;color:#fff}
+    .ticket-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(90deg,rgba(2,16,27,.84),rgba(2,16,27,.15)),url('assets/whale-shark-napaling-banner.png') center/cover no-repeat}
+    .ticket-hero-inner{position:relative;z-index:1;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:90px 0 62px}
+    .ticket-eyebrow{font:700 11px Sora,sans-serif;letter-spacing:.2em;color:var(--ticket-accent);margin:0 0 16px}
+    .ticket-hero h1{font:400 clamp(48px,8vw,88px)/.95 'Bebas Neue',sans-serif;letter-spacing:.025em;margin:0;max-width:760px}
+    .ticket-hero h1 span{color:var(--ticket-accent)}
+    .ticket-hero p{max-width:570px;font:400 15px/1.8 'DM Sans',sans-serif;color:rgba(255,255,255,.86);margin:20px 0 0}
+    .ticket-wrap{width:min(1050px,calc(100% - 40px));margin:0 auto;padding:66px 0 90px}
+    .ticket-intro{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:34px}
+    .ticket-kicker{font:700 10px Sora,sans-serif;letter-spacing:.18em;color:var(--ticket-accent);margin:0 0 12px}
+    .ticket-intro h2,.ticket-section h2{font:700 clamp(26px,4vw,38px)/1.15 Sora,sans-serif;margin:0;color:#fff}
+    .ticket-price{font:700 clamp(30px,4vw,42px) Sora,sans-serif;color:var(--ticket-accent);white-space:nowrap}
+    .ticket-price small{display:block;font:600 10px Sora,sans-serif;letter-spacing:.15em;color:rgba(255,255,255,.56);text-align:right;margin-top:4px}
+    .ticket-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .ticket-panel{padding:25px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:linear-gradient(145deg,rgba(16,57,75,.72),rgba(5,28,43,.92))}
+    .ticket-panel h3{font:700 11px Sora,sans-serif;letter-spacing:.16em;color:var(--ticket-accent);margin:0 0 18px}
+    .ticket-panel.not-included h3{color:#f2ad89}
+    .ticket-list{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+    .ticket-list li{position:relative;padding-left:24px;font:400 14px/1.65 'DM Sans',sans-serif;color:rgba(255,255,255,.88)}
+    .ticket-list li:before{content:'✓';position:absolute;left:0;color:var(--ticket-accent);font-weight:700}
+    .not-included .ticket-list li:before{content:'—';color:#f2ad89}
+    .ticket-section{margin-top:54px}
+    .ticket-section-head{margin-bottom:20px}
+    .ticket-section-head p{font:400 14px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.66);margin:10px 0 0}
+    .recommend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .recommend-item{padding:17px 18px;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);font:500 13px/1.65 'DM Sans',sans-serif;color:rgba(255,255,255,.88)}
+    .recommend-item b{display:block;color:var(--ticket-accent);font:700 10px Sora,sans-serif;letter-spacing:.1em;margin-bottom:7px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{padding:20px 17px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}
+    .step-num{font:400 30px 'Bebas Neue',sans-serif;color:var(--ticket-accent)}
+    .step p{font:500 13px/1.65 'DM Sans',sans-serif;color:rgba(255,255,255,.86);margin:8px 0 0}
+    .ticket-note{margin-top:26px;padding:20px 22px;border-left:3px solid #f2ad89;background:rgba(242,173,137,.08);border-radius:0 12px 12px 0}
+    .ticket-note b{font:700 10px Sora,sans-serif;letter-spacing:.15em;color:#f2ad89}
+    .ticket-note p{font:400 13px/1.75 'DM Sans',sans-serif;color:rgba(255,255,255,.8);margin:8px 0 0}
+    .ticket-faq{display:grid;gap:10px}
+    .ticket-faq details{padding:17px 19px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.045)}
+    .ticket-faq summary{cursor:pointer;font:600 13px/1.5 'DM Sans',sans-serif;color:#fff}
+    .ticket-faq details p{font:400 13px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.72);margin:12px 0 0}
+    .ticket-cta{margin-top:58px;padding:34px;border-radius:20px;background:linear-gradient(120deg,#0d5368,#09283d);display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .ticket-cta h2{font:700 clamp(23px,3vw,32px) Sora,sans-serif;margin:0}
+    .ticket-cta p{font:400 13px/1.7 'DM Sans',sans-serif;color:rgba(255,255,255,.75);margin:9px 0 0}
+    .ticket-button{display:inline-flex;align-items:center;justify-content:center;padding:15px 21px;border-radius:9px;background:var(--ticket-accent);color:#062536;text-decoration:none;font:700 11px Sora,sans-serif;letter-spacing:.06em;white-space:nowrap}
+    .ticket-back{display:inline-block;margin-top:28px;color:rgba(255,255,255,.7);font:600 12px 'DM Sans',sans-serif;text-decoration:none}
+    @media(max-width:700px){.ticket-hero{min-height:390px}.ticket-hero-inner{padding:75px 0 42px}.ticket-wrap{padding:46px 0 65px}.ticket-intro{display:block}.ticket-price{margin-top:18px}.ticket-price small{text-align:left}.ticket-grid,.recommend-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.ticket-cta{display:block;padding:25px}.ticket-button{margin-top:20px;width:100%;box-sizing:border-box}}
+    @media(max-width:420px){.steps{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="index.html"><img class="site-logo" src="assets/BW%20logo.png?v=2" alt="Bohol Whale Shark"></a>
+    <nav class="desktop-nav"><a href="index.html#today">Today's Update</a><a href="index.html#tour-types">Tour Types</a><a href="index.html#faq">FAQ</a></nav>
+    <div class="header-actions"><a class="book-now-link" href="#reserve">Book Now</a><button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button></div>
+    <div class="mobile-menu" aria-hidden="true"><a href="index.html#today">Whale Shark Journal</a><a href="index.html#tour-types">Tour Types</a><a href="index.html#faq">FAQ</a><a href="#reserve">Book Now</a></div>
+  </header>
+  <main>
+    <section class="ticket-hero"><div class="ticket-hero-inner"><p class="ticket-eyebrow">04 / PRIVATE COMBO · BOHOL, PHILIPPINES</p><h1>WHALE SHARK<br><span>+ NAPALING</span></h1><p>Enjoy a private ocean day combining whale shark watching with a snorkeling stop at Napaling point. Your own private guide, hotel transfers and snorkeling gear are arranged for your group.</p></div></section>
+    <div class="ticket-wrap">
+      <div class="ticket-intro"><div><p class="ticket-kicker">YOUR TOUR AT A GLANCE</p><h2>Two ocean experiences.<br>One private day.</h2></div><div class="ticket-price">₱6,000<small>PER PERSON · PHP</small></div></div>
+      <div class="ticket-grid">
+        <section class="ticket-panel"><h3>✓ INCLUDED</h3><ul class="ticket-list">
+          <li>Whale shark watching admission ticket</li>
+          <li>All mandatory entrance fees and required tour-related charges</li>
+          <li>Hotel pick-up and drop-off</li>
+          <li>Private guide dedicated to your group</li>
+          <li>Fins, snorkeling mask and life jacket</li>
+          <li>Underwater photography</li>
+          <li>Light snacks</li>
+          <li>Snorkeling experience at Napaling point</li>
+        </ul></section>
+        <section class="ticket-panel not-included"><h3>NOT INCLUDED</h3><ul class="ticket-list">
+          <li>Personal expenses and purchases not specifically listed under Included</li>
+        </ul></section>
+      </div>
+      <section class="ticket-section"><div class="ticket-section-head"><p class="ticket-kicker">IS THIS OPTION RIGHT FOR YOU?</p><h2>Recommended for</h2><p>A private combo for travelers who want to enjoy both the whale shark experience and Napaling snorkeling with their own group.</p></div>
+        <div class="recommend-grid">
+          <div class="recommend-item"><b>01 / YOUR OWN GROUP</b>Families, couples and friends who prefer to enjoy the tour together privately.</div>
+          <div class="recommend-item"><b>02 / PERSONAL GUIDE</b>Guests who want a dedicated guide throughout the experience.</div>
+          <div class="recommend-item"><b>03 / EASY PREPARATION</b>Travelers who want hotel transfers, snorkeling gear and required fees arranged.</div>
+          <div class="recommend-item"><b>04 / PHOTO MEMORIES</b>Guests who want to combine whale shark watching with Napaling snorkeling in one trip.</div>
+        </div>
+      </section>
+      <section class="ticket-section"><div class="ticket-section-head"><p class="ticket-kicker">SIMPLE 3-STEP PROCESS</p><h2>How it works</h2><p>Your private combo tour begins with hotel pick-up, followed by whale shark watching and a snorkeling visit to Napaling point.</p></div>
+        <div class="steps"><div class="step"><div class="step-num">01</div><p>Send your preferred date, guest count and hotel name.</p></div><div class="step"><div class="step-num">02</div><p>Confirm your private tour and receive your booking voucher.</p></div><div class="step"><div class="step-num">03</div><p>Meet your team at the confirmed hotel pick-up time.</p></div><div class="step"><div class="step-num">04</div><p>Continue to Napaling point for a snorkeling experience with your private tour team.</p></div></div>
+      </section>
+      <div class="ticket-note"><b>PRIVATE COMBO – TOUR DETAILS</b><p>Please provide your hotel or accommodation name when booking. Our team will confirm your pick-up details in advance. The itinerary includes whale shark watching followed by snorkeling at Napaling point. Activities at both locations remain subject to local operating rules and sea and weather conditions.</p></div>
+      <section class="ticket-section"><div class="ticket-section-head"><p class="ticket-kicker">GOOD TO KNOW</p><h2>Frequently asked questions</h2></div>
+        <div class="ticket-faq">
+          <details><summary>Is this a private tour?</summary><p>Yes. Your group will have a dedicated private guide for the private combo itinerary. The whale shark watching site and Napaling point operate according to local rules and conditions.</p></details>
+          <details><summary>Is hotel pick-up and drop-off included?</summary><p>Yes. Please share your accommodation name and location when booking so our team can confirm the pick-up details.</p></details>
+          <details><summary>What snorkeling equipment is provided?</summary><p>Fins, a snorkeling mask and a life jacket are included.</p></details>
+          <details><summary>Is underwater photography included?</summary><p>Yes. Underwater photography is included for the whale shark experience.</p></details>
+          <details><summary>Are the entrance fees included?</summary><p>Yes. The whale shark admission ticket and mandatory entrance fees and required tour-related charges are included. Napaling snorkeling is also part of the combo itinerary.</p></details>
+        </div>
+      </section>
+      <section class="ticket-cta" id="reserve"><div><p class="ticket-kicker">READY TO GO?</p><h2>Reserve your Whale Shark + Napaling Private Tour.</h2><p>Send us your preferred date, number of guests and hotel name. We will confirm your private pick-up details.</p></div><a class="ticket-button" href="https://api.whatsapp.com/send?phone=639178754864&text=Hello%20Bohol%20Whale%20Shark!%20I%27d%20like%20to%20inquire%20about%20the%20Whale%20Shark%20and%20Napaling%20Private%20Tour." target="_blank" rel="noopener">ASK ABOUT PRIVATE COMBO ↗</a></section>
+      <a class="ticket-back" href="index.html#tour-types">← Back to all tour options</a>
+    </div>
+  </main>
+  <script src="script.js?v=20261112-onepage"></script>
+</body>
+</html>
