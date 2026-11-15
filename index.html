@@ -427,9 +427,9 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
               <tr><th scope="row">Whale shark admission ticket</th><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td></tr>
               <tr><th scope="row">Required entrance / tour fees</th><td><span class="compare-detail">Ticket only</span></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td></tr>
               <tr><th scope="row">Transportation</th><td><span class="compare-no">Not included</span></td><td><span class="compare-detail">Round-trip from meeting point</span></td><td><b class="compare-yes">✓</b><span class="compare-detail">Hotel pick-up &amp; drop-off</span></td><td><b class="compare-yes">✓</b><span class="compare-detail">Hotel pick-up &amp; drop-off</span></td></tr>
-              <tr><th scope="row">Guide service</th><td><span class="compare-no">Not included</span></td><td><span class="compare-detail">Local guide</span></td><td><span class="compare-detail">Private guide</span></td><td><span class="compare-detail">Private guide</span></td></tr>
+              <tr class="compare-highlight-row"><th scope="row"><span class="compare-feature-label">PRIVATE BENEFIT</span>Guide service</th><td><span class="compare-no">Not included</span></td><td><span class="compare-detail">Local guide</span></td><td><span class="compare-feature-pill">✦ PRIVATE GUIDE</span></td><td><span class="compare-feature-pill">✦ PRIVATE GUIDE</span></td></tr>
               <tr><th scope="row">Snorkeling equipment</th><td><span class="compare-no">Not included</span></td><td><span class="compare-detail">Mask &amp; life jacket</span></td><td><span class="compare-detail">Fins, mask &amp; life jacket</span></td><td><span class="compare-detail">Fins, mask &amp; life jacket</span></td></tr>
-              <tr><th scope="row">Underwater photography</th><td><span class="compare-no">Not included</span></td><td><span class="compare-no">Not included</span></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td></tr>
+              <tr class="compare-highlight-row"><th scope="row"><span class="compare-feature-label">PHOTO INCLUDED</span>Underwater photography</th><td><span class="compare-no">Not included</span></td><td><span class="compare-no">Not included</span></td><td><span class="compare-feature-pill compare-photo-pill">📸 INCLUDED</span></td><td><span class="compare-feature-pill compare-photo-pill">📸 INCLUDED</span></td></tr>
               <tr><th scope="row">Light snacks</th><td><span class="compare-no">Not included</span></td><td><span class="compare-no">Not included</span></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td></tr>
               <tr><th scope="row">Napaling point snorkeling</th><td><span class="compare-no">—</span></td><td><span class="compare-no">—</span></td><td><span class="compare-no">—</span></td><td><b class="compare-yes">✓</b></td></tr>
               <tr><th scope="row">Private arrangement</th><td><span class="compare-no">—</span></td><td><span class="compare-no">Join-in tour</span></td><td><b class="compare-yes">✓</b></td><td><b class="compare-yes">✓</b></td></tr>
@@ -466,6 +466,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       .tour-compare-table .tour-compare-featured{background:#f0f8f9}
       .tour-compare-table thead .tour-compare-featured{box-shadow:inset 0 3px #16869a}
       .compare-yes{display:block;color:#078b78;font-size:19px;line-height:1.1}
+      .tour-compare-table tbody tr.compare-highlight-row th{background:#f2faf9;color:#173c43;font-weight:700}
+      .tour-compare-table tbody tr.compare-highlight-row td{background:#f7fcfb}
+      .compare-feature-label{display:block;width:max-content;margin:0 0 6px;padding:3px 6px;border-radius:4px;background:#dff4f0;color:#087f70;font:700 8px Sora,sans-serif;letter-spacing:.1em}
+      .compare-feature-pill{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:6px 9px;border:1px solid #b9e7df;border-radius:6px;background:#e6f7f3;color:#087f70;font:700 9px Sora,sans-serif;letter-spacing:.045em;white-space:nowrap}
+      .compare-photo-pill{border-color:#c8dff0;background:#edf6fc;color:#176c9a}
+
       .compare-detail{display:block;color:#596c73;font-size:11px;line-height:1.5;margin-top:3px}
       .compare-no{display:block;color:#9aa6aa;font-size:11px}
       .tour-compare-table tfoot th{background:#f7f9f9;text-align:left;padding-left:22px;color:#34474e;font:700 10px Sora,sans-serif;letter-spacing:.08em}
