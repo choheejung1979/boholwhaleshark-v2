@@ -299,6 +299,19 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 @media(max-width:600px){.bw-explore-section{padding:65px 0 72px}.bw-explore-heading{margin:28px 0 22px}.bw-explore-heading h2{font-size:clamp(33px,9vw,44px)}.bw-explore-grid{gap:10px}.bw-explore-card{min-height:160px;padding:15px}.bw-explore-card strong{font-size:12px}.bw-explore-card small{font-size:10px}.bw-explore-bottom{align-items:flex-start;flex-direction:column;gap:12px;padding:18px}}
 #more-bohol{scroll-margin-top:100px}
 
+
+/* Photo cards for Explore More of Bohol */
+.bw-explore-card{padding:0;overflow:hidden;min-height:0}
+.bw-explore-image{height:158px;width:100%;overflow:hidden;background:#0a3548;position:relative}
+.bw-explore-image:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(180deg,transparent,rgba(2,18,29,.22));pointer-events:none}
+.bw-explore-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease}
+.bw-explore-card:hover .bw-explore-image img{transform:scale(1.055)}
+.bw-explore-card>strong,.bw-explore-card>small,.bw-explore-card>span{margin-left:18px;margin-right:18px}
+.bw-explore-card>strong{margin-top:16px}
+.bw-explore-card>small{margin-top:7px}
+.bw-explore-card>span{margin-top:auto;margin-bottom:17px;padding-top:13px;border-top:1px solid rgba(255,255,255,.1)}
+@media(max-width:600px){.bw-explore-image{height:132px}.bw-explore-card>strong,.bw-explore-card>small,.bw-explore-card>span{margin-left:13px;margin-right:13px}.bw-explore-card>strong{margin-top:13px}.bw-explore-card>span{margin-bottom:13px}}
+
 </style>
 </head>
 <body class="home-page">
@@ -687,15 +700,7 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
           <details><summary>Can I touch or swim close to a whale shark?</summary><p>No. Never touch, chase, ride, feed, or block a whale shark. Keep at least 5 metres from its head and 6 metres from its sides and tail, and always follow the local guide and crew instructions. The encounter should be calm and respectful.</p></details>
           <details><summary>Are whale shark sightings guaranteed?</summary><p>No. Whale sharks are wild animals, and sightings cannot be guaranteed. Their presence depends on natural conditions, so please understand that this is a wildlife encounter rather than a guaranteed animal show.</p></details>
           <details><summary>Is underwater photography included?</summary><p>Underwater photography is included in the Private Tour and Whale Shark + Napaling packages. It is not included in Ticket Only or Pick-up &amp; Drop-off.</p></details>
-          <details><summary>What happens if the weather or sea conditions are poor?</summary><p>Guest safety and marine protection come first. Tours may be delayed, adjusted, postponed or cancelled depending on weather, sea conditions and local operating decisions. Please follow updates and instructions from our team.</p></details>
-          <details><summary>Can children join the tour?</summary><p>Suitability depends on the child's age, comfort in the water, the selected package and the conditions on the day. Please include each child's age in your inquiry so our team can check the appropriate option.</p></details>
-          <details><summary>How can I change or ask about my reservation?</summary><p>Message our team on WhatsApp with your booking name, tour date and the change or question you have. Any change is subject to availability and the applicable booking terms.</p></details>
-        </div>
-        <div class="onepage-question-cta"><div><span class="section-kicker">NEED A HAND?</span><h3>We're happy to help.</h3><p>Tell us your preferred date, number of guests and hotel, and we'll help you find the right tour.</p></div><a href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">Chat with us <span>↗</span></a></div>
-      </div>
-    </section>
-
-    <section class="bw-explore-section" id="more-bohol">
+          <details><summary>What happens if the weather or sea conditions are poor?</summary><p>Guest safety and marine protection come first. Tours may be delayed, adjusted, postponed or cancelled depending o<section class="bw-explore-section" id="more-bohol">
       <div class="container">
         <p class="section-kicker"><span>06</span> EXPLORE MORE OF BOHOL</p>
         <div class="bw-explore-heading">
@@ -703,11 +708,18 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
           <p>Your whale shark experience is just one part of Bohol. Discover island hopping, countryside adventures, snorkeling spots and more with our sister travel brand, BOHOLTRIP.</p>
         </div>
         <div class="bw-explore-grid">
-          <a class="bw-explore-card" href="https://boholtrip.ph/island-hopping/"><div class="explore-icon">🌊</div><strong>Island Hopping</strong><small>Balicasag, marine life and beautiful island waters</small><span>EXPLORE TOUR ↗</span></a>
-          <a class="bw-explore-card" href="https://boholtrip.ph/napaling-snorkeling/"><div class="explore-icon">🐟</div><strong>Napaling Snorkeling</strong><small>Discover the famous sardine run in Panglao</small><span>EXPLORE TOUR ↗</span></a>
-          <a class="bw-explore-card" href="https://boholtrip.ph/countryside-tour/"><div class="explore-icon">⛰️</div><strong>Countryside Tour</strong><small>Chocolate Hills, tarsiers and heritage sites</small><span>EXPLORE TOUR ↗</span></a>
-          <a class="bw-explore-card" href="https://boholtrip.ph/firefly/"><div class="explore-icon">✨</div><strong>Firefly Watching</strong><small>A peaceful evening on Bohol's rivers</small><span>EXPLORE TOUR ↗</span></a>
-          <a class="bw-explore-card" href="https://boholtrip.ph/anda/"><div class="explore-icon">🏝️</div><strong>Anda Discovery</strong><small>Explore the quieter eastern side of Bohol</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/island-hopping/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/BALICASG-DRONE.jpg" alt="Balicasag island hopping" loading="lazy"></div><strong>Island Hopping</strong><small>Balicasag, marine life and beautiful island waters</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/napaling-snorkeling/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/%EB%82%98%ED%8C%94%EB%A7%81-%EC%A0%95%EC%96%B4%EB%A6%AC-14-768x512.png" alt="Napaling sardine run snorkeling" loading="lazy"></div><strong>Napaling Snorkeling</strong><small>Discover the famous sardine run in Panglao</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/countryside-tour/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/COUNTRYSIDE-TOUR-1.png" alt="Bohol countryside tour" loading="lazy"></div><strong>Countryside Tour</strong><small>Chocolate Hills, tarsiers and heritage sites</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/firefly/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/firefly-watching-1.jpg" alt="Bohol firefly watching" loading="lazy"></div><strong>Firefly Watching</strong><small>A peaceful evening on Bohol's rivers</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/anda/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/ChatGPT-Image-Jun-12-2026-09_39_22-AM-683x1024.png" alt="Anda Bohol tour" loading="lazy"></div><strong>Anda Discovery</strong><small>Explore the quieter eastern side of Bohol</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/danao-adventure/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/ChatGPT-Image-Jun-12-2026-02_02_33-PM-1-683x1024.png" alt="Danao adventure park" loading="lazy"></div><strong>Danao Adventure</strong><small>Outdoor activities and adrenaline experiences</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/panglao-city-tour/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/06/ChatGPT-Image-Jun-12-2026-12_24_55-PM-683x1024.png" alt="Panglao city tour" loading="lazy"></div><strong>Panglao City Tour</strong><small>Island landmarks, beaches and local sights</small><span>EXPLORE TOUR ↗</span></a>
+          <a class="bw-explore-card" href="https://boholtrip.ph/private-car-rental/"><div class="bw-explore-image"><img src="https://boholtrip.ph/wp-content/uploads/2026/07/-1.png" alt="Bohol private car rental" loading="lazy"></div><strong>Private Car Rental</strong><small>Flexible private transport around Bohol</small><span>EXPLORE SERVICE ↗</span></a>
+        </div>
+        <div class="bw-explore-bottom"><p>Looking for more activities, tours and travel services around Bohol?</p><a href="https://boholtrip.ph/services/">DISCOVER ALL BOHOLTRIP TOURS ↗</a></div>
+      </div>
+    </section>icon">🏝️</div><strong>Anda Discovery</strong><small>Explore the quieter eastern side of Bohol</small><span>EXPLORE TOUR ↗</span></a>
           <a class="bw-explore-card" href="https://boholtrip.ph/danao-adventure/"><div class="explore-icon">🪂</div><strong>Danao Adventure</strong><small>Outdoor activities and adrenaline experiences</small><span>EXPLORE TOUR ↗</span></a>
           <a class="bw-explore-card" href="https://boholtrip.ph/panglao-city-tour/"><div class="explore-icon">🌴</div><strong>Panglao City Tour</strong><small>Island landmarks, beaches and local sights</small><span>EXPLORE TOUR ↗</span></a>
           <a class="bw-explore-card" href="https://boholtrip.ph/private-car-rental/"><div class="explore-icon">🚙</div><strong>Private Car Rental</strong><small>Flexible private transport around Bohol</small><span>EXPLORE SERVICE ↗</span></a>
