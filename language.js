@@ -6,7 +6,8 @@
   {code:'ko',label:'한국어',flag:'🇰🇷'},
   {code:'zh-CN',label:'中文（简体）',flag:'🇨🇳'},
   {code:'es',label:'Español',flag:'🇪🇸'},
-  {code:'fr',label:'Français',flag:'🇫🇷'}
+  {code:'fr',label:'Français',flag:'🇫🇷'},
+  {code:'ja',label:'日本語',flag:'🇯🇵'}
  ];
  var ROOT_DOMAIN='.boholwhaleshark.com';
  var KEY='bw-language';
@@ -115,7 +116,7 @@
   if(!window.google||!google.translate)return;
   new google.translate.TranslateElement({
    pageLanguage:'en',
-   includedLanguages:'ko,zh-CN,es,fr',
+   includedLanguages:'ko,zh-CN,es,fr,ja',
    autoDisplay:false,
    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
   },'bw-google-translate');
