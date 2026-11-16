@@ -1,0 +1,16 @@
+/* Bohol Whale Shark — subtle motion system */
+:root{--motion-ease:cubic-bezier(.22,.61,.36,1)}
+@media(prefers-reduced-motion:no-preference){
+  .motion-ready .motion-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--motion-ease),transform .7s var(--motion-ease);transition-delay:var(--motion-delay,0ms)}
+  .motion-ready .motion-reveal.is-visible{opacity:1;transform:translateY(0)}
+  .motion-hover{transition:transform .35s var(--motion-ease),box-shadow .35s var(--motion-ease),border-color .35s var(--motion-ease)}
+  .motion-hover:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(3,30,43,.10)}
+  a,button{transition:color .25s ease,background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .motion-image{overflow:hidden}
+  .motion-image img{transition:transform .8s var(--motion-ease)}
+  .motion-image:hover img{transform:scale(1.035)}
+  input,select,textarea{transition:border-color .25s ease,box-shadow .25s ease,background-color .25s ease}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:#35cbd5;box-shadow:0 0 0 3px rgba(53,203,213,.13)}
+  .submit:hover,.card-pay:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(6,29,43,.16)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
