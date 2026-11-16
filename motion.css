@@ -1,10 +1,10 @@
 /* Bohol Whale Shark — subtle motion system */
 :root{--motion-ease:cubic-bezier(.22,.61,.36,1)}
 @media(prefers-reduced-motion:no-preference){
-  .motion-ready .motion-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--motion-ease),transform .7s var(--motion-ease);transition-delay:var(--motion-delay,0ms)}
+  .motion-ready .motion-reveal{opacity:0;transform:translateY(7px);transition:opacity .9s var(--motion-ease),transform .9s var(--motion-ease);transition-delay:var(--motion-delay,0ms)}
   .motion-ready .motion-reveal.is-visible{opacity:1;transform:translateY(0)}
   .motion-hover{transition:transform .35s var(--motion-ease),box-shadow .35s var(--motion-ease),border-color .35s var(--motion-ease)}
-  .motion-hover:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(3,30,43,.10)}
+  .motion-hover:hover{transform:none;box-shadow:none}
   a,button{transition:color .25s ease,background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
   .motion-image{overflow:hidden}
   .motion-image img{transition:transform .8s var(--motion-ease)}
@@ -44,3 +44,5 @@
   .onepage-faq-list details,.onepage-policy-list details{display:block}
   .onepage-faq-list details>.bw-motion-panel,.onepage-policy-list details>.bw-motion-panel{display:block}
 }
+
+@media(prefers-reduced-motion:no-preference){.motion-ready .motion-reveal.motion-hover:hover{transform:translateY(0);box-shadow:none}}
