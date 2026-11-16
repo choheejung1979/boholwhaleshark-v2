@@ -2,11 +2,11 @@
 (function(){
  'use strict';
  var LANGS=[
-  {code:'en',label:'English'},
-  {code:'ko',label:'한국어'},
-  {code:'zh-CN',label:'中文（简体）'},
-  {code:'es',label:'Español'},
-  {code:'fr',label:'Français'}
+  {code:'en',label:'English',flag:'🇺🇸'},
+  {code:'ko',label:'한국어',flag:'🇰🇷'},
+  {code:'zh-CN',label:'中文（简体）',flag:'🇨🇳'},
+  {code:'es',label:'Español',flag:'🇪🇸'},
+  {code:'fr',label:'Français',flag:'🇫🇷'}
  ];
  var ROOT_DOMAIN='.boholwhaleshark.com';
  var KEY='bw-language';
@@ -61,14 +61,38 @@
   var wrap=document.createElement('div');
   wrap.className='bw-language-switcher notranslate';
   wrap.setAttribute('translate','no');
-  var select=document.createElement('select');
-  select.setAttribute('aria-label','Select language');
-  select.innerHTML=LANGS.map(function(item){
-   return '<option value="'+item.code+'">'+item.label+'</option>';
-  }).join('');
-  select.value=readLanguage();
-  select.addEventListener('change',function(){chooseLanguage(select.value);});
-  wrap.appendChild(select);
+  var current=readLanguage();
+  var active=LANGS.find(function(item){return item.code===current;})||LANGS[0];
+  var trigger=document.createElement('button');
+  trigger.type='button';
+  trigger.className='bw-language-trigger';
+  trigger.setAttribute('aria-label','Select language');
+  trigger.setAttribute('aria-expanded','false');
+  trigger.innerHTML='<span class="bw-language-flag" aria-hidden="true">'+active.flag+'</span><span class="bw-language-current">'+active.label+'</span><span class="bw-language-chevron" aria-hidden="true"></span>';
+  var menu=document.createElement('div');
+  menu.className='bw-language-menu';
+  menu.setAttribute('role','menu');
+  LANGS.forEach(function(item){
+   var option=document.createElement('button');
+   option.type='button';
+   option.className='bw-language-option'+(item.code===current?' is-active':'');
+   option.setAttribute('role','menuitem');
+   option.innerHTML='<span class="bw-language-flag" aria-hidden="true">'+item.flag+'</span><span>'+item.label+'</span>';
+   option.addEventListener('click',function(){chooseLanguage(item.code);});
+   menu.appendChild(option);
+  });
+  trigger.addEventListener('click',function(){
+   var open=wrap.classList.toggle('is-open');
+   trigger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(event){
+   if(!wrap.contains(event.target)){
+    wrap.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded','false');
+   }
+  });
+  wrap.appendChild(trigger);
+  wrap.appendChild(menu);
   var actions=document.querySelector('.header-actions');
   var header=document.querySelector('.site-header');
   if(actions){
