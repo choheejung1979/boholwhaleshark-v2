@@ -9,32 +9,49 @@
   {code:'fr',label:'Français'}
  ];
  var COOKIE='googtrans';
- function setCookie(value){
+ function writeCookie(value){
   document.cookie=COOKIE+'='+value+';path=/;max-age=31536000;SameSite=Lax';
-  try{localStorage.setItem('bw-language',value.split('/').pop());}catch(e){}
  }
- function getCookie(){
-  var m=document.cookie.match(/(?:^|; )googtrans=([^;]+)/);
-  if(m)return decodeURIComponent(m[1]).split('/').pop();
-  try{return localStorage.getItem('bw-language')||'en';}catch(e){return 'en';}
+ function clearCookie(){
+  var domains=['', ';domain='+location.hostname, ';domain=.boholwhaleshark.com'];
+  domains.forEach(function(domain){
+   document.cookie=COOKIE+'=;path=/;max-age=0;SameSite=Lax'+domain;
+   document.cookie=COOKIE+'=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT'+domain;
+  });
+  try{localStorage.setItem('bw-language','en');}catch(e){}
  }
- function fire(el){
-  if(!el)return;
-  el.dispatchEvent(new Event('change',{bubbles:true}));
+ function getLanguage(){
+  try{
+   var saved=localStorage.getItem('bw-language');
+   if(saved&&LANGS.some(function(l){return l.code===saved;}))return saved;
+  }catch(e){}
+  var m=document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
+  if(m){
+   var value=decodeURIComponent(m[1]).split('/').pop();
+   if(LANGS.some(function(l){return l.code===value;}))return value;
+  }
+  return 'en';
+ }
+ function triggerTranslate(code){
+  var combo=document.querySelector('.goog-te-combo');
+  if(!combo)return false;
+  combo.value=code;
+  combo.dispatchEvent(new Event('change',{bubbles:true}));
+  return true;
  }
  function applyLanguage(code){
+  if(!LANGS.some(function(l){return l.code===code;}))return;
   if(code==='en'){
-   setCookie('/en/en');
-   var combo=document.querySelector('.goog-te-combo');
+   clearCookie();
    location.reload();
    return;
   }
-  setCookie('/en/'+code);
-  var combo=document.querySelector('.goog-te-combo');
-  if(combo){combo.value=code;fire(combo);}
-  else location.reload();
+  try{localStorage.setItem('bw-language',code);}catch(e){}
+  writeCookie('/en/'+code);
+  if(!triggerTranslate(code))location.reload();
  }
  function init(){
+  if(document.getElementById('bw-google-translate'))return;
   var host=document.createElement('div');
   host.id='bw-google-translate';
   host.className='bw-google-translate-host';
@@ -46,8 +63,7 @@
   var select=document.createElement('select');
   select.setAttribute('aria-label','Select language');
   select.innerHTML=LANGS.map(function(l){return '<option value="'+l.code+'">'+l.label+'</option>';}).join('');
-  select.value=getCookie();
-  if(!LANGS.some(function(l){return l.code===select.value;}))select.value='en';
+  select.value=getLanguage();
   select.addEventListener('change',function(){applyLanguage(select.value);});
   wrap.appendChild(select);
   var actions=document.querySelector('.header-actions');
@@ -71,10 +87,13 @@
    autoDisplay:false,
    layout:google.translate.TranslateElement.InlineLayout.SIMPLE
   },'bw-google-translate');
-  var lang=getCookie();
-  if(lang&&lang!=='en'){
-   var combo=document.querySelector('.goog-te-combo');
-   if(combo){combo.value=lang;fire(combo);}
+  var lang=getLanguage();
+  if(lang!=='en'){
+   var attempts=0;
+   var timer=setInterval(function(){
+    attempts++;
+    if(triggerTranslate(lang)||attempts>=20)clearInterval(timer);
+   },250);
   }
  };
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
