@@ -1,0 +1,11 @@
+/* Mobile sticky booking + WhatsApp actions */
+.bw-mobile-actions{display:none}
+@media(max-width:950px){
+ .bw-mobile-actions{position:fixed;z-index:9990;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:7px;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(3,27,41,.94);box-shadow:0 12px 34px rgba(0,0,0,.28);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+ .bw-mobile-actions a{min-height:49px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:11px;text-decoration:none;font-family:'Sora',sans-serif;font-size:11px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
+ .bw-mobile-actions .bw-mobile-book{background:#25b8c8;color:#fff;box-shadow:0 5px 16px rgba(24,190,207,.2)}
+ .bw-mobile-actions .bw-mobile-message{background:rgba(255,255,255,.09);border:1px solid rgba(123,234,242,.28);color:#fff}
+ .bw-mobile-actions svg{width:17px;height:17px;flex:0 0 17px}
+ body{padding-bottom:82px}
+}
+@media(min-width:951px){.bw-mobile-actions{display:none!important}}
