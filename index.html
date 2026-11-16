@@ -314,6 +314,25 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 
 .today-field-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.today-field-photos img{display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid rgba(123,234,242,.16)}@media(max-width:700px){.today-field-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.today-field-photos img{height:140px}}
 </style>
+
+  <style id="bw-mobile-floating-contact-style">
+    .bw-mobile-dock{display:none}
+    @media(max-width:760px){
+      .bw-mobile-dock{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:9998;display:flex;flex-direction:column;align-items:flex-end;gap:11px;font-family:'DM Sans',Arial,sans-serif}
+      .bw-mobile-dock *{box-sizing:border-box}
+      .bw-mobile-dock-menu{display:flex;flex-direction:column;align-items:flex-end;gap:9px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px) scale(.97);transform-origin:bottom right;transition:opacity .2s ease,transform .2s ease,visibility .2s}
+      .bw-mobile-dock.is-open .bw-mobile-dock-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1)}
+      .bw-mobile-bubble{display:flex;align-items:center;gap:11px;min-height:44px;padding:0 16px 0 13px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(4,31,46,.96);box-shadow:0 7px 24px rgba(0,0,0,.25);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.015em;white-space:nowrap;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+      .bw-mobile-bubble-icon{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:50%;background:rgba(123,234,242,.16);color:#7beaf2;font-size:14px;font-weight:800}
+      .bw-mobile-dock-controls{display:flex;align-items:center;gap:9px}
+      .bw-mobile-book{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 21px;border-radius:999px;background:#25b8c8;color:#fff;text-decoration:none;font:800 12px Sora,sans-serif;letter-spacing:.09em;box-shadow:0 9px 28px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.16);white-space:nowrap}
+      .bw-mobile-book span{font-size:18px;line-height:1}
+      .bw-mobile-dock-toggle{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:#062d43;color:#fff;font-size:26px;font-weight:400;line-height:1;box-shadow:0 9px 28px rgba(0,0,0,.3);cursor:pointer;transition:transform .2s ease,background .2s ease}
+      .bw-mobile-dock.is-open .bw-mobile-dock-toggle{transform:rotate(45deg);background:#0b5268}
+    }
+    @media(max-width:380px){.bw-mobile-dock{right:12px;bottom:calc(14px + env(safe-area-inset-bottom))}.bw-mobile-book{min-height:48px;padding:0 16px;font-size:11px}.bw-mobile-dock-toggle{width:48px;height:48px}.bw-mobile-bubble{min-height:42px}}
+  </style>
+
 </head>
 <body class="home-page">
   <header class="site-header" id="site-header">
@@ -935,5 +954,41 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       } catch(e) { console.error('Unable to load today field report',e); }
     }
   </script>
+
+  <div class="bw-mobile-dock" id="bwMobileDock">
+    <div class="bw-mobile-dock-menu" id="bwMobileDockMenu" aria-hidden="true">
+      <a class="bw-mobile-bubble" href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener"><span class="bw-mobile-bubble-icon">✆</span> WhatsApp</a>
+      <a class="bw-mobile-bubble" href="mailto:boseantravel@gmail.com"><span class="bw-mobile-bubble-icon">✉</span> Email</a>
+      <a class="bw-mobile-bubble" href="https://www.facebook.com/profile.php?id=61566112840948" target="_blank" rel="noopener"><span class="bw-mobile-bubble-icon">f</span> Facebook</a>
+      <a class="bw-mobile-bubble" href="https://pf.kakao.com/_xgdlAX" target="_blank" rel="noopener"><span class="bw-mobile-bubble-icon">K</span> KakaoTalk Channel</a>
+    </div>
+    <div class="bw-mobile-dock-controls">
+      <a class="bw-mobile-book" href="booking.html">BOOK NOW <span>→</span></a>
+      <button class="bw-mobile-dock-toggle" id="bwMobileDockToggle" type="button" aria-label="Open contact options" aria-expanded="false" aria-controls="bwMobileDockMenu">+</button>
+    </div>
+  </div>
+  <script id="bw-mobile-floating-contact-script">
+    (function(){
+      var dock=document.getElementById('bwMobileDock');
+      var toggle=document.getElementById('bwMobileDockToggle');
+      var menu=document.getElementById('bwMobileDockMenu');
+      if(!dock||!toggle||!menu)return;
+      toggle.addEventListener('click',function(){
+        var open=dock.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded',open?'true':'false');
+        toggle.setAttribute('aria-label',open?'Close contact options':'Open contact options');
+        menu.setAttribute('aria-hidden',open?'false':'true');
+      });
+      document.addEventListener('click',function(event){
+        if(!dock.contains(event.target)){
+          dock.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+          toggle.setAttribute('aria-label','Open contact options');
+          menu.setAttribute('aria-hidden','true');
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
