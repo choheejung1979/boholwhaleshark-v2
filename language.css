@@ -1,0 +1,18 @@
+/* Bohol Whale Shark language selector */
+.bw-language-switcher{display:inline-flex;align-items:center;position:relative;z-index:10020;margin-right:12px;font-family:'DM Sans',sans-serif}
+.bw-language-switcher select{appearance:none;-webkit-appearance:none;min-width:112px;height:40px;padding:0 32px 0 13px;border:1px solid rgba(123,234,242,.38);border-radius:999px;background:#082d3b;color:#fff;font:700 11px 'DM Sans',sans-serif;letter-spacing:.03em;cursor:pointer;outline:none}
+.bw-language-switcher:after{content:'⌄';position:absolute;right:13px;top:8px;color:#7beaf2;font-size:16px;pointer-events:none}
+.bw-language-switcher select:focus{border-color:#7beaf2;box-shadow:0 0 0 3px rgba(123,234,242,.13)}
+.bw-language-switcher option{background:#082d3b;color:#fff}
+.bw-google-translate-host{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.goog-te-banner-frame.skiptranslate{display:none!important}
+body{top:0!important}
+@media(max-width:950px){
+ .bw-language-switcher{margin-right:8px}
+ .bw-language-switcher select{height:36px;min-width:98px;padding-left:10px;font-size:10px}
+ .bw-language-switcher:after{top:6px}
+}
+@media(max-width:600px){
+ .bw-language-switcher{position:fixed;top:84px;right:14px;margin:0}
+ .bw-language-switcher select{height:34px;min-width:92px;background:rgba(8,45,59,.94);backdrop-filter:blur(8px)}
+}
