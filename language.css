@@ -16,3 +16,13 @@ body{top:0!important}
  .bw-language-switcher{position:fixed;top:84px;right:14px;margin:0}
  .bw-language-switcher select{height:34px;min-width:92px;background:rgba(8,45,59,.94);backdrop-filter:blur(8px)}
 }
+
+/* Suppress Google's injected translation toolbar while keeping page translation active */
+html,body{top:0!important;margin-top:0!important}
+iframe.goog-te-banner-frame,
+iframe[name="goog-te-banner-frame"],
+.goog-te-banner-frame,
+body>.skiptranslate{display:none!important;visibility:hidden!important;height:0!important;max-height:0!important;pointer-events:none!important}
+.goog-te-banner-frame.skiptranslate{display:none!important}
+#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:transparent!important;box-shadow:none!important}
