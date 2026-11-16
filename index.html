@@ -134,14 +134,12 @@
 .bw-partners-heading h2 em{display:block;font-style:normal;color:#7beaf2}
 .bw-partners-heading p{max-width:390px;font-size:13px;line-height:1.8;color:rgba(255,255,255,.72)}
 .bw-partner-logos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 18px;align-items:stretch}
-.bw-partner-logo{min-height:150px;padding:17px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;border:1px solid rgba(123,234,242,.17);border-radius:15px;background:rgba(255,255,255,.035);color:#fff;transition:transform .2s,border-color .2s}
-.bw-partner-logo:hover{transform:translateY(-4px);border-color:#7beaf2}.bw-partner-empty{visibility:hidden;pointer-events:none}
-.bw-logo-symbol{font-size:35px;line-height:1;color:#42bde9}
-.bw-partner-logo strong{font:800 11px/1.25 Sora,sans-serif;letter-spacing:.025em;color:#fff}
-.bw-partner-logo small{font:600 8px/1.35 'DM Sans',sans-serif;color:rgba(255,255,255,.68)}
-.bw-partner-dot .bw-logo-symbol{color:#d4b34b}.bw-partner-denr .bw-logo-symbol{color:#62bb78}.bw-partner-boholtrip .bw-logo-symbol{color:#39d2d3}.bw-partner-pbowa .bw-logo-symbol{color:#f1bd42}.bw-partner-crab .bw-logo-symbol{color:#ff7777}
-@media(max-width:950px){.bw-partners-heading{grid-template-columns:1fr;gap:17px}.bw-partner-logos{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:600px){.bw-partners-section{padding:66px 0 72px}.bw-partners-heading{padding:30px 0}.bw-partners-heading h2{font-size:clamp(27px,8vw,39px)}.bw-partner-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bw-partner-logo{min-height:132px;padding:13px 9px}.bw-partner-logo strong{font-size:10px}}
+.bw-partner-logo{min-width:0;min-height:150px;padding:18px;display:flex;align-items:center;justify-content:center;background:#f5f7f8;border:1px solid rgba(255,255,255,.18);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.bw-partner-logo:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.bw-partner-logo img{display:block;width:100%;height:118px;object-fit:contain;object-position:center}
+.bw-partner-empty{visibility:hidden;pointer-events:none;background:transparent;border:0;box-shadow:none}
+@media(max-width:950px){.bw-partners-heading{grid-template-columns:1fr;gap:17px}.bw-partner-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+@media(max-width:600px){.bw-partners-section{padding:66px 0 72px}.bw-partners-heading{padding:30px 0}.bw-partners-heading h2{font-size:clamp(27px,8vw,39px)}.bw-partner-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bw-partner-logo{min-height:120px;padding:12px}.bw-partner-logo img{height:96px}}
 </style>
 \n
   <style id="bw-footer-enhancement">
@@ -684,12 +682,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
       <p>Working alongside local authorities, tourism partners and trusted businesses to support responsible tourism in Bohol.</p>
     </div>
     <div class="bw-partner-logos" aria-label="Our partners and affiliations">
-      <div class="bw-partner-logo bw-partner-coastguard"><span class="bw-logo-symbol">⚓</span><strong>PHILIPPINE<br>COAST GUARD</strong></div>
-      <div class="bw-partner-logo bw-partner-dot"><span class="bw-logo-symbol">✺</span><strong>DEPARTMENT<br>OF TOURISM</strong><small>PHILIPPINES</small></div>
-      <div class="bw-partner-logo bw-partner-denr"><span class="bw-logo-symbol">♧</span><strong>DEPARTMENT OF ENVIRONMENT<br>&amp; NATURAL RESOURCES</strong></div>
-      <div class="bw-partner-logo bw-partner-boholtrip"><span class="bw-logo-symbol">☀</span><strong>BOHOL TRIP</strong><small>Powered by BS Travel &amp; Tours</small></div>
-      <div class="bw-partner-logo bw-partner-pbowa"><span class="bw-logo-symbol">★</span><strong>PBOWA</strong><small>Panglao Boat Operators Workers Association</small></div>
-      <div class="bw-partner-logo bw-partner-crab"><span class="bw-logo-symbol">♋</span><strong>JUMBO CRAB</strong><small>BOHOL SEAFOOD</small></div>
+      <div class="bw-partner-logo"><img src="assets/philippine-coast-guard.png" alt="Philippine Coast Guard" loading="lazy"></div>
+      <div class="bw-partner-logo"><img src="assets/department-tourism.png" alt="Department of Tourism Philippines" loading="lazy"></div>
+      <div class="bw-partner-logo"><img src="assets/denr.png" alt="Department of Environment and Natural Resources" loading="lazy"></div>
+      <div class="bw-partner-logo"><img src="assets/bohol-trip.png" alt="Bohol Trip, powered by BS Travel and Tours" loading="lazy"></div>
+      <div class="bw-partner-logo"><img src="assets/pbowa.png" alt="Panglao Boat Operators Workers Association" loading="lazy"></div>
+      <div class="bw-partner-logo"><img src="assets/jumbo-crab.png" alt="Jumbo Crab Bohol Seafood" loading="lazy"></div>
       <div class="bw-partner-logo bw-partner-empty" aria-hidden="true"></div>
       <div class="bw-partner-logo bw-partner-empty" aria-hidden="true"></div>
     </div>
