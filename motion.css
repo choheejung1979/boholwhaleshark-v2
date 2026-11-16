@@ -14,3 +14,33 @@
   .submit:hover,.card-pay:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(6,29,43,.16)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Homepage card reveals + FAQ / policy accordion interaction */
+@media(prefers-reduced-motion:no-preference){
+  .motion-ready .motion-reveal{will-change:opacity,transform}
+  .motion-ready .onepage-faq-list details,
+  .motion-ready .onepage-policy-list details{transition:background-color .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .onepage-faq-list details,
+  .onepage-policy-list details{display:grid;grid-template-rows:auto 0fr;transition:grid-template-rows .42s var(--motion-ease),background-color .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .onepage-faq-list details[open],
+  .onepage-policy-list details[open]{grid-template-rows:auto 1fr;background:rgba(8,58,79,.82);border-color:rgba(123,234,242,.42);box-shadow:0 12px 30px rgba(0,12,22,.14)}
+  .onepage-faq-list details>.bw-motion-panel,
+  .onepage-policy-list details>.bw-motion-panel{min-height:0;overflow:hidden;opacity:0;transition:opacity .28s ease}
+  .onepage-faq-list details[open]>.bw-motion-panel,
+  .onepage-policy-list details[open]>.bw-motion-panel{opacity:1}
+  .onepage-faq-list summary,
+  .onepage-policy-list summary{transition:color .25s ease}
+  .onepage-faq-list summary:after,
+  .onepage-policy-list summary:after{content:"⌄";font:20px 'DM Sans',sans-serif;transform:rotate(0);transition:transform .3s var(--motion-ease),color .25s ease}
+  .onepage-faq-list details[open] summary:after,
+  .onepage-policy-list details[open] summary:after{content:"⌄";transform:rotate(180deg);color:#fff}
+  .onepage-faq-list summary:hover,
+  .onepage-policy-list summary:hover{color:#9af2f5}
+  .onepage-faq-list summary:focus-visible,
+  .onepage-policy-list summary:focus-visible{outline:2px solid #7beaf2;outline-offset:-4px;border-radius:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .onepage-faq-list details,.onepage-policy-list details{display:block}
+  .onepage-faq-list details>.bw-motion-panel,.onepage-policy-list details>.bw-motion-panel{display:block}
+}
