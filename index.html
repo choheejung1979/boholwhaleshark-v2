@@ -125,7 +125,32 @@
     .tour-compare-table .compare-dual-price span{display:flex;justify-content:center;align-items:baseline;gap:6px;font-size:15px}
     .tour-compare-note:after{content:" Filipino and foreigner rates are shown separately.";font-weight:600}
   </style>
-  <link rel="stylesheet" href="header-theme.css?v=20261112-onepage">
+  <link rel="stylesheet" href="header-theme.css?v=20261112-onepage">\n
+  <style id="bw-footer-enhancement">
+    .bw-footer{padding:78px 0 25px!important;background:radial-gradient(ellipse at 78% 0%,rgba(18,112,139,.18),transparent 38%),#02131f!important}
+    .bw-footer-grid{grid-template-columns:1.45fr .9fr .9fr 1.35fr!important;gap:54px!important;padding-bottom:55px!important}
+    .bw-footer-brand .brand-name{font-size:13px;line-height:1.35;letter-spacing:.12em;color:#fff}
+    .bw-footer-brand p{max-width:290px;font-size:12px;line-height:1.8;color:rgba(255,255,255,.56);margin-top:18px}
+    .bw-footer-grid h4{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.16em;color:#7beaf2;margin:3px 0 22px}
+    .bw-footer-links a{display:flex!important;justify-content:space-between;align-items:center;gap:12px;width:100%;font-size:12px!important;color:rgba(255,255,255,.72)!important;margin:0!important;padding:0 0 14px;transition:color .2s}
+    .bw-footer-links a span{color:rgba(123,234,242,.58);font-size:13px}
+    .bw-footer-links a:hover,.bw-footer-contact a:hover{color:#7beaf2!important}
+    .bw-footer-wa{display:inline-flex!important;align-items:center;gap:10px;margin-top:24px!important;padding:12px 15px;border:1px solid rgba(123,234,242,.35);border-radius:9px;background:rgba(8,91,111,.28);color:#fff!important;font:700 9px Sora,sans-serif!important;letter-spacing:.08em}
+    .bw-footer-wa b{color:#7beaf2;font-size:15px;margin-left:3px}
+    .bw-wa-icon{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#0b9e83;color:#fff;font-size:15px}
+    .bw-contact-item{display:flex;flex-direction:column;gap:5px;margin:0 0 15px}
+    .bw-contact-label,.bw-footer-policy-heading{font:700 9px Sora,sans-serif;letter-spacing:.13em;color:rgba(255,255,255,.4)}
+    .bw-contact-item>a,.bw-contact-item>span:last-child{font-size:12px;color:rgba(255,255,255,.82);line-height:1.5}
+    .bw-footer-policy-wrap{padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+    .bw-footer-policy-heading{text-align:center;margin-bottom:9px}
+    .bw-footer-policy-wrap .footer-policies{margin:0 0 25px}
+    .bw-footer-policy-wrap .footer-policies a{font-size:10px!important}
+    .bw-footer-bottom{padding-top:18px!important;border-color:rgba(255,255,255,.12)!important;font-size:10px!important;color:rgba(255,255,255,.38)!important}
+    .bw-footer-bottom i{font-style:normal;color:#7beaf2;padding:0 5px}
+    @media(max-width:950px){.bw-footer-grid{grid-template-columns:1fr 1fr!important;gap:36px 28px!important}.bw-footer-brand{grid-column:span 2}.bw-footer-contact{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}.bw-footer-contact h4{grid-column:span 2}.bw-footer-contact .bw-contact-item{margin-bottom:4px}}
+    @media(max-width:600px){.bw-footer{padding:58px 0 22px!important}.bw-footer-grid{gap:30px 18px!important;padding-bottom:35px!important}.bw-footer-brand{grid-column:span 2}.bw-footer-brand p{max-width:320px}.bw-footer-grid h4{margin-bottom:16px}.bw-footer-contact{grid-template-columns:1fr;gap:12px}.bw-footer-contact h4{grid-column:auto}.bw-footer-contact .bw-contact-item{margin-bottom:2px}.bw-footer-policy-wrap .footer-policies{justify-content:flex-start;gap:4px 0}.bw-footer-policy-wrap .footer-policies a{white-space:normal;padding:5px 9px!important}.bw-footer-bottom{gap:7px!important;line-height:1.6}}
+  </style>
+
 
     <style>
       /* Homepage TOUR TYPES cards are a visual carousel only — not direct links. */
@@ -696,27 +721,40 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
         </div>
       </div>
     </section>
-  <footer class="site-footer section-dark">
-    <div class="container footer-grid">
-      <div class="footer-brand">
+  <footer class="site-footer section-dark bw-footer">
+    <div class="container footer-grid bw-footer-grid">
+      <div class="footer-brand bw-footer-brand">
         <div class="brand-name">BOHOL<br>WHALE SHARK</div>
-        <p>Whale shark reservations and daily field updates in Bohol, Philippines.</p>
+        <p>Your local team for whale shark reservations, private tours and daily field updates in Bohol, Philippines.</p>
+        <a class="bw-footer-wa" href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener"><span class="bw-wa-icon">✆</span> CHAT WITH US ON WHATSAPP <b>↗</b></a>
       </div>
-      <div>
+      <div class="bw-footer-links">
         <h4>EXPLORE</h4>
-        <a href="#today">Whale Shark Journal</a>
-        <a href="#tour-types">Tour Types</a>
-        <a href="#faq">FAQ</a>
+        <a href="#today">Whale Shark Journal <span>↗</span></a>
+        <a href="#tour-types">Our Tour Packages <span>↗</span></a>
+        <a href="#faq">Frequently Asked Questions <span>↗</span></a>
       </div>
-      <div>
+      <div class="bw-footer-links">
         <h4>BOOKING</h4>
-        <a href="booking.html">Reserve a Tour</a>
-        <a href="booking.html">Check Dates</a>
+        <a href="booking.html">Reserve a Tour <span>↗</span></a>
+        <a href="booking.html">Check Availability <span>↗</span></a>
+        <a href="#policies">Booking Information <span>↗</span></a>
+      </div>
+      <div class="bw-footer-contact">
+        <h4>GET IN TOUCH</h4>
+        <div class="bw-contact-item"><span class="bw-contact-label">WHATSAPP / PHONE</span><a href="https://api.whatsapp.com/send?phone=639178754864" target="_blank" rel="noopener">+63 917 875 4864</a></div>
+        <div class="bw-contact-item"><span class="bw-contact-label">EMAIL</span><a href="mailto:boseantravel@gmail.com">boseantravel@gmail.com</a></div>
+        <div class="bw-contact-item"><span class="bw-contact-label">LOCATION</span><span>Tawala, Panglao, Bohol, Philippines</span></div>
+        <div class="bw-contact-item"><span class="bw-contact-label">CUSTOMER SERVICE</span><span>Daily · 07:00–18:00 (PHT)</span></div>
       </div>
     </div>
-    <div class="footer-policies"><a href="#terms">Terms and Conditions</a><a href="#privacy">Privacy Policy</a><a href="#refunds">Return and Refund Policy</a><a href="#contact">Customer Service / Contact</a><a href="#disputes">Dispute Resolution Policy</a></div><div class="container footer-bottom">
-      <span>© 2026 Bohol Whale Shark</span>
-      <span>Bohol, Philippines</span>
+    <div class="container bw-footer-policy-wrap">
+      <div class="bw-footer-policy-heading">CUSTOMER INFORMATION</div>
+      <div class="footer-policies"><a href="#terms">Terms and Conditions</a><a href="#privacy">Privacy Policy</a><a href="#refunds">Return and Refund Policy</a><a href="#contact">Customer Service</a><a href="#disputes">Dispute Resolution</a></div>
+    </div>
+    <div class="container footer-bottom bw-footer-bottom">
+      <span>© 2026 Bohol Whale Shark. All rights reserved.</span>
+      <span>Locally based in Bohol, Philippines <i>·</i> All prices in PHP</span>
     </div>
   </footer>
   <script>
