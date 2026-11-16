@@ -15,7 +15,14 @@
 .goog-te-banner-frame.skiptranslate{display:none!important}
 body{top:0!important}
 @media(max-width:950px){.bw-language-switcher{margin-right:8px}.bw-language-trigger{height:38px;min-width:120px;padding:0 12px;font-size:10px}.bw-language-menu{width:166px}}
-@media(max-width:600px){.bw-language-switcher{position:fixed;top:84px;right:14px;margin:0}.bw-language-trigger{height:36px;min-width:114px;background:rgba(5,31,44,.96);backdrop-filter:blur(10px)}}
+@media(max-width:600px){
+ .site-header .header-actions{display:flex!important;align-items:center!important;gap:10px!important}
+ .site-header .bw-language-switcher{position:relative!important;top:auto!important;right:auto!important;left:auto!important;margin:0 10px 0 0!important;flex:0 0 auto!important}
+ .site-header .bw-language-trigger{height:34px!important;min-width:102px!important;padding:0 10px!important;gap:7px!important;background:rgba(5,31,44,.96)!important;backdrop-filter:blur(10px)}
+ .site-header .bw-language-flag{font-size:15px!important}
+ .site-header .bw-language-current{font-size:10px!important}
+ .site-header .bw-language-menu{top:calc(100% + 8px)!important;right:0!important;width:158px!important}
+}
 html,body{top:0!important;margin-top:0!important}
 iframe.goog-te-banner-frame,iframe[name="goog-te-banner-frame"],.goog-te-banner-frame,body>.skiptranslate{display:none!important;visibility:hidden!important;height:0!important;max-height:0!important;pointer-events:none!important}
 .goog-te-banner-frame.skiptranslate{display:none!important}
