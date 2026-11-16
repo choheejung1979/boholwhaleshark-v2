@@ -1,11 +1,11 @@
-/* Subtle card-only scroll reveal and accessible FAQ / policy accordions. */
+/* Balanced scroll reveal and accessible FAQ / policy accordions. */
 (function(){
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- const selectors=['.tour-card','.tour-detail-card','.feature-card','.condition-card','.history-card','.bw-explore-card','.experience-rule-card','.onepage-faq-list details','.onepage-policy-list details'];
+ const selectors=['.tour-card','.tour-detail-card','.feature-card','.condition-card','.history-card','.bw-explore-card','.experience-rule-card','.today-heading','.today-update-grid > *','.journal-heading','.journal-grid > *','.onepage-section-heading','.bw-partners-heading','.bw-partner-logos > *','.onepage-faq-list details','.onepage-policy-list details'];
  const elements=[...new Set(selectors.flatMap(s=>Array.from(document.querySelectorAll(s))))];
  elements.forEach((el,i)=>{
-  if(el.closest('header,nav,footer,.mobile-menu')||el.matches('.onepage-faq-list details,.onepage-policy-list details'))return;
-  if(!reduced){el.classList.add('motion-reveal');el.style.setProperty('--motion-delay',Math.min(i%3,2)*35+'ms');}
+  if(el.closest('header,nav,footer,.mobile-menu'))return;
+  if(!reduced){el.classList.add('motion-reveal');el.style.setProperty('--motion-delay',Math.min(i%4,3)*55+'ms');}
  });
  if(!reduced&&'IntersectionObserver'in window){
   document.body.classList.add('motion-ready');
