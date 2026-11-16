@@ -10,7 +10,7 @@
 .site-header .desktop-nav a:hover{color:var(--bw-header-aqua)!important;opacity:1!important}
 .site-header .header-actions{position:static!important;right:auto!important;transform:none!important;display:flex;align-items:center;gap:12px;margin-left:0}
 .site-header .book-now-link,.site-header .header-actions>.button{display:inline-flex!important;align-items:center;justify-content:center;gap:10px;min-height:43px!important;padding:0 19px!important;border:1px solid rgba(117,232,242,.12)!important;border-radius:999px!important;background:var(--bw-header-aqua-dark)!important;color:#fff!important;text-decoration:none!important;font-family:'Sora',sans-serif!important;font-size:11px!important;line-height:1!important;letter-spacing:.09em!important;font-weight:700!important;text-transform:uppercase!important;box-shadow:0 5px 16px rgba(24,190,207,.18)!important;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
-.site-header .book-now-link:after{content:'→';font-size:16px;line-height:0;transform:translateY(-1px)}
+.site-header .book-now-link:after{content:none!important;display:none!important}
 .site-header .header-actions>.button span{font-size:16px;line-height:0;transform:translateY(-1px)}
 .site-header .book-now-link:hover,.site-header .header-actions>.button:hover{transform:translateY(-1px);background:#31c7d5!important;box-shadow:0 7px 18px rgba(24,190,207,.22)!important}
 .site-header .menu-toggle{display:none!important;background:none;border:0;padding:8px;color:var(--bw-header-ink)}
@@ -82,7 +82,7 @@
   font-family:'Sora',sans-serif!important;font-size:11px!important;line-height:1!important;font-weight:700!important;
   letter-spacing:.09em!important;text-transform:uppercase!important;text-decoration:none!important;box-shadow:0 5px 16px rgba(24,190,207,.18)!important;
 }
-.site-header .book-now-link:after{content:'→'!important;font-size:16px!important;line-height:0!important}
+.site-header .book-now-link:after{content:none!important;display:none!important}
 @media(max-width:950px){
  .site-header,.site-header.scrolled,.inner-page .site-header,.inner-page .site-header.scrolled{top:10px!important;left:12px!important;width:calc(100% - 24px)!important;height:60px!important;padding:0 17px!important;border-radius:15px!important}
  .site-header .brand,.inner-page .site-header .brand{width:158px!important;min-width:158px!important;height:38px!important}
