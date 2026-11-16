@@ -26,8 +26,7 @@
   if(code==='en'){
    setCookie('/en/en');
    var combo=document.querySelector('.goog-te-combo');
-   if(combo){combo.value='en';fire(combo);}
-   else location.reload();
+   location.reload();
    return;
   }
   setCookie('/en/'+code);
