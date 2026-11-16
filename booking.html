@@ -1,6 +1,17 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book Your Whale Shark Tour</title><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"><script src="/header.js?v=20261115-booking" defer></script><style>
 :root{--n:#061d2b;--a:#35d4df;--ink:#102b38;--muted:#71838b;--line:#dce6e8}*{box-sizing:border-box}body{margin:0;background:#f1f6f6;color:var(--ink);font:14px 'DM Sans',sans-serif}.page{padding:140px 16px 65px}.wrap{max-width:900px;margin:auto}.intro{text-align:center;margin-bottom:30px}.intro small{font:700 10px Sora;letter-spacing:.2em;color:#168e9a}.intro h1{font:800 clamp(32px,6vw,52px) Sora;letter-spacing:-.06em;margin:12px 0}.intro p{color:var(--muted)}.card{background:#fff;border-radius:18px;padding:clamp(20px,4vw,40px);box-shadow:0 18px 55px #0522300d}.section{margin-bottom:30px}.section h2{font:700 18px Sora;margin:0 0 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:8px}.wide{grid-column:1/-1}label{font-size:10px;font-weight:700;letter-spacing:.1em;color:#5e747d;text-transform:uppercase}input,select,textarea{width:100%;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fcfefe;font:13px 'DM Sans';color:var(--ink)}textarea{min-height:85px}.nations{display:grid;grid-template-columns:1fr 1fr;gap:10px}.nation{position:relative}.nation input{position:absolute;opacity:0}.nation span{display:block;padding:15px;border:1px solid var(--line);border-radius:10px;text-align:center;font-weight:700;cursor:pointer}.nation input:checked+span{border:2px solid #23b8c4;padding:14px;background:#e7fbfc}.nation small{display:block;color:var(--muted);font-weight:400;margin-top:5px}.price{font:800 24px Sora;color:#087e8b}.summary{background:#f7fbfb;border:1px solid var(--line);border-radius:13px;padding:20px}.row{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.row strong{text-align:right}.total{border:0;font:800 18px Sora}.total strong{font-size:23px;color:#087e8b}.notice{padding:15px;margin:20px 0;background:#effafb;border-left:3px solid var(--a);font-size:11px;line-height:1.7;color:#526a72}.submit{width:100%;padding:18px;border:0;border-radius:10px;background:var(--n);color:white;font:700 12px Sora;letter-spacing:.1em;cursor:pointer}.submit:disabled{opacity:.5}.msg{display:none;margin-top:14px;padding:13px;border-radius:9px;font-size:12px;line-height:1.6}.msg.error{display:block;background:#fff0f0;color:#a52828}.msg.info{display:block;background:#eaf8fa;color:#075767}@media(max-width:620px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}.page{padding-top:115px}}
-.optional{font-weight:400;color:#78909b;font-size:.85em}</style><link rel="stylesheet" href="/motion.css?v=20261116"><script src="/motion.js?v=20261116" defer></script>
+.optional{font-weight:400;color:#78909b;font-size:.85em}
+.back-warning{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,19,28,.68);backdrop-filter:blur(5px)}
+.back-warning.is-open{display:flex}
+.back-warning-card{width:min(100%,440px);padding:30px;border-radius:18px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.25);text-align:center}
+.back-warning-icon{width:48px;height:48px;display:grid;place-items:center;margin:0 auto 16px;border-radius:50%;background:#e9f9fa;color:#087e8b;font-size:24px}
+.back-warning-card h2{margin:0 0 10px;font:800 22px Sora;color:#102b38}
+.back-warning-card p{margin:0;color:#71838b;font-size:13px;line-height:1.7}
+.back-warning-actions{display:flex;gap:10px;margin-top:24px}
+.back-warning-actions button{flex:1;min-height:46px;border:0;border-radius:9px;font:700 11px Sora;cursor:pointer}
+.back-stay{background:#061d2b;color:#fff}
+.back-leave{background:#eef3f4;color:#425a63}
+</style><link rel="stylesheet" href="/motion.css?v=20261116"><script src="/motion.js?v=20261116" defer></script>
 <link rel="stylesheet" href="/language.css?v=20261116-1">
 </head><body><main class="page"><div class="wrap"><header class="intro"><small>BOHOL · PHILIPPINES</small><h1>BOOK YOUR OCEAN EXPERIENCE</h1><p>Choose your tour, rate category and complete your reservation.</p></header><div class="card"><form id="form">
 <section class="section"><h2>01 · TOUR DETAILS</h2><div class="grid">
@@ -11,7 +22,18 @@
 <section class="section"><h2>02 · YOUR INFORMATION</h2><div class="grid">
 <div class="field"><label for="name">Lead Guest Full Name (English) *</label><input id="name" placeholder="Representative's full name in English" autocomplete="name" required></div><div class="field"><label for="hotel">Hotel / Room <span class="optional">(Optional)</span></label><input id="hotel" placeholder="Hotel name / room number (optional)"></div><div class="field"><label for="whatsapp">WhatsApp Number *</label><input id="whatsapp" type="tel" placeholder="+63..." required></div><div class="field"><label for="email">Email *</label><input id="email" type="email" required></div><div class="field wide"><label for="notes">Special Request</label><textarea id="notes"></textarea></div></div></section>
 <section class="summary"><h2>03 · BOOKING SUMMARY</h2><div class="row"><span>Tour</span><strong id="stour">—</strong></div><div class="row"><span>Date</span><strong id="sdate">—</strong></div><div class="row"><span>Rate</span><strong id="srate">—</strong></div><div class="row"><span>Guests</span><strong id="sguests">1</strong></div><div class="row"><span>Price / person</span><strong id="sunit">—</strong></div><div class="row total"><span>TOTAL</span><strong id="total">₱0</strong></div></section>
-<div class="notice"><b>NOTICE</b><br>All prices are per person. Your booking is pending until PayMongo confirms successful payment. Please check your selected rate and guest count.</div><button class="submit" id="submit">CONTINUE TO SECURE PAYMENT →</button><div class="msg" id="message"></div></form></div></div></main>
+<div class="notice"><b>NOTICE</b><br>All prices are per person. Your booking is pending until PayMongo confirms successful payment. Please check your selected rate and guest count.</div><button class="submit" id="submit">CONTINUE TO SECURE PAYMENT →</button><div class="msg" id="message"></div></form></div></div></main><div class="back-warning" id="backWarning" role="dialog" aria-modal="true" aria-labelledby="backWarningTitle" aria-describedby="backWarningText">
+ <div class="back-warning-card">
+  <div class="back-warning-icon" aria-hidden="true">?</div>
+  <h2 id="backWarningTitle">Leave your booking?</h2>
+  <p id="backWarningText">Your booking details have not been submitted yet. If you leave this page, the information you entered may be lost. Would you like to continue booking?</p>
+  <div class="back-warning-actions">
+   <button type="button" class="back-stay" id="backStay">Continue Booking</button>
+   <button type="button" class="back-leave" id="backLeave">Leave Page</button>
+  </div>
+ </div>
+</div>
+
 <script src="/whaleshark-config.js"></script><script type="module">
 import{createClient}from'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';const c=window.BW_SUPABASE_CONFIG||{},db=c.url&&c.anonKey?createClient(c.url,c.anonKey):null;
 const rates={ticket:{name:'Ticket Only',Filipino:1250,Foreigner:1920},transfer:{name:'Pick-up & Drop-off',Filipino:2150,Foreigner:2820},private:{name:'Private Tour',Filipino:3830,Foreigner:4500},combo:{name:'Whale Shark + Napaling',Filipino:5330,Foreigner:6000}},$=id=>document.getElementById(id),cash=n=>'₱'+Number(n).toLocaleString('en-PH'),cat=()=>document.querySelector('input[name=rate]:checked')?.value||'';
@@ -20,5 +42,37 @@ function update(){let p=calc();$('unit').textContent=p.u?cash(p.u)+' / person':'
 ['tour','date','guests'].forEach(id=>$(id).addEventListener('input',update));document.querySelectorAll('[name=rate]').forEach(x=>x.addEventListener('change',update));const requestedTour=new URLSearchParams(location.search).get('tour');if(requestedTour&&rates[requestedTour])$('tour').value=requestedTour;
 let now=new Date();$('date').min=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
 $('form').addEventListener('submit',async e=>{e.preventDefault();let p=calc(),m=$('message'),b=$('submit');m.className='msg';if(!p.t||!p.r){m.textContent='Please select Filipino or Foreigner to continue.';m.className='msg error';return}if(!Number.isInteger(p.g)||p.g<1||p.g>30||!$('date').value||$('date').value<$('date').min){m.textContent='Please enter a valid date and guest count.';m.className='msg error';return}if(!db){m.textContent='Booking system is not configured. Please contact our team.';m.className='msg error';return}b.disabled=true;b.textContent='PREPARING CHECKOUT...';try{let {data,error}=await db.functions.invoke('create-whale-booking-checkout',{body:{tour_key:$('tour').value,rate_category:p.r,tour_date:$('date').value,guests:p.g,customer_name:$('name').value.trim(),hotel:$('hotel').value.trim(),whatsapp:$('whatsapp').value.trim(),email:$('email').value.trim(),special_request:$('notes').value.trim()}});if(error)throw error;if(!data?.checkout_url)throw Error(data?.error||'Checkout URL not returned');location.href=data.checkout_url}catch(err){m.textContent=err.message||'Unable to create checkout. Please try again.';m.className='msg error';b.disabled=false;b.textContent='CONTINUE TO SECURE PAYMENT →'}});if(new URLSearchParams(location.search).has('cancelled')){$('message').textContent='Payment cancelled. Your reservation remains pending.';$('message').className='msg info'}update();
+
+/* Confirm before navigating away with the browser Back button. */
+(function(){
+ const dialog=document.getElementById('backWarning');
+ if(!dialog)return;
+ let allowLeave=false;
+ let dialogOpen=false;
+ function showDialog(){
+  dialogOpen=true;
+  dialog.classList.add('is-open');
+  document.getElementById('backStay').focus();
+ }
+ function hideDialog(){
+  dialogOpen=false;
+  dialog.classList.remove('is-open');
+ }
+ history.pushState({bwBookingGuard:true},'',location.href);
+ window.addEventListener('popstate',function(){
+  if(allowLeave)return;
+  showDialog();
+  history.pushState({bwBookingGuard:true},'',location.href);
+ });
+ document.getElementById('backStay').addEventListener('click',function(){hideDialog();});
+ document.getElementById('backLeave').addEventListener('click',function(){
+  allowLeave=true;
+  hideDialog();
+  history.go(-2);
+ });
+ dialog.addEventListener('click',function(e){if(e.target===dialog)hideDialog();});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dialogOpen)hideDialog();});
+})();
+
 </script><script src="/language.js?v=20261116-2" defer></script>
 </body></html>
