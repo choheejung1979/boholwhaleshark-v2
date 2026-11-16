@@ -33,7 +33,7 @@
   setSavedLanguage(code);
  }
  function readLanguage(){
-  var match=document.cookie.match(/(?:^|;\\s*)googtrans=([^;]+)/);
+  var match=document.cookie.match(/(?:^|;\s*)googtrans=([^;]+)/);
   if(match){
    var cookieLang=decodeURIComponent(match[1]).split('/').pop();
    if(LANGS.some(function(item){return item.code===cookieLang;}))return cookieLang;
