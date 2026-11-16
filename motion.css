@@ -1,7 +1,7 @@
 /* Bohol Whale Shark — subtle motion system */
 :root{--motion-ease:cubic-bezier(.22,.61,.36,1)}
 @media(prefers-reduced-motion:no-preference){
-  .motion-ready .motion-reveal{opacity:0;transform:translateY(7px);transition:opacity .9s var(--motion-ease),transform .9s var(--motion-ease);transition-delay:var(--motion-delay,0ms)}
+  .motion-ready .motion-reveal{opacity:0;transform:translateY(15px);transition:opacity .78s var(--motion-ease),transform .78s var(--motion-ease);transition-delay:var(--motion-delay,0ms)}
   .motion-ready .motion-reveal.is-visible{opacity:1;transform:translateY(0)}
   .motion-hover{transition:transform .35s var(--motion-ease),box-shadow .35s var(--motion-ease),border-color .35s var(--motion-ease)}
   .motion-hover:hover{transform:none;box-shadow:none}
