@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore more of Bohol with island hopping, countryside adventures, snorkeling, firefly watching, waterfalls and private tours with BOHOLTRIP.">
+<meta name="theme-color" content="#031a29">
+<title>Explore More of Bohol | BOHOLTRIP Tours & Experiences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#031a29;--deep:#02131f;--blue:#07364a;--cyan:#7beaf2;--white:#f5f8fa;--muted:rgba(245,248,250,.7)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+header{height:82px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.09);background:rgba(2,19,31,.94);position:relative;z-index:2}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:800 15px/1.1 Sora,sans-serif;letter-spacing:.12em}.brand span{color:var(--cyan)}nav{display:flex;align-items:center;gap:28px;font-size:12px;color:rgba(255,255,255,.78)}nav a:hover{color:var(--cyan)}.nav-cta,.primary{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:999px;background:var(--cyan);color:#032331;font:700 11px Sora,sans-serif;letter-spacing:.04em}
+.hero{position:relative;overflow:hidden;padding:105px 0 90px;background:radial-gradient(ellipse at 78% 25%,rgba(18,153,176,.24),transparent 35%),linear-gradient(135deg,#062d42,#031a29 68%)}.hero:after{content:"BOHOL";position:absolute;right:-15px;bottom:-65px;font:800 clamp(130px,24vw,310px)/1 Sora,sans-serif;letter-spacing:-.09em;color:rgba(255,255,255,.025);pointer-events:none}
+.kicker{font:700 10px Sora,sans-serif;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase}.hero h1{max-width:850px;margin:22px 0 18px;font:800 clamp(43px,7vw,82px)/.98 Sora,sans-serif;letter-spacing:-.065em}.hero h1 em{font-style:normal;color:var(--cyan)}.hero p{max-width:610px;color:var(--muted);font-size:16px;line-height:1.8;margin:0}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.secondary{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;font:600 11px Sora,sans-serif}
+.intro{padding:64px 0 26px}.intro-row{display:flex;justify-content:space-between;align-items:end;gap:30px}.intro h2{font:700 clamp(26px,4vw,42px)/1.08 Sora,sans-serif;letter-spacing:-.04em;margin:12px 0}.intro p{max-width:470px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 5px}
+.tours{padding:30px 0 92px}.tour-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.tour-card{min-height:250px;display:flex;flex-direction:column;padding:24px;border:1px solid rgba(123,234,242,.17);border-radius:18px;background:linear-gradient(145deg,rgba(8,62,82,.8),rgba(3,28,43,.96));transition:transform .22s,border-color .22s,box-shadow .22s}.tour-card:hover{transform:translateY(-5px);border-color:rgba(123,234,242,.58);box-shadow:0 20px 42px rgba(0,0,0,.22)}.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.card-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:rgba(123,234,242,.11);font-size:22px}.card-tag{font:700 9px Sora,sans-serif;letter-spacing:.13em;color:var(--cyan);text-transform:uppercase}.tour-card h3{font:700 19px/1.2 Sora,sans-serif;margin:0 0 10px}.tour-card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 22px}.card-link{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font:700 10px Sora,sans-serif;letter-spacing:.08em;color:var(--cyan)}.card-link span{font-size:17px}
+.banner{padding:0 0 90px}.banner-inner{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:35px 38px;border:1px solid rgba(123,234,242,.22);border-radius:20px;background:linear-gradient(110deg,rgba(7,73,91,.8),rgba(3,31,46,.92))}.banner h2{font:700 clamp(22px,3vw,32px)/1.15 Sora,sans-serif;margin:0 0 10px}.banner p{font-size:13px;line-height:1.7;color:var(--muted);margin:0;max-width:620px}
+footer{padding:26px 0;border-top:1px solid rgba(255,255,255,.1);background:var(--deep);color:rgba(255,255,255,.55);font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-row a{color:var(--cyan)}
+@media(max-width:900px){.tour-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intro-row{display:block}.intro p{margin-top:14px}}
+@media(max-width:600px){.wrap{width:min(100% - 36px,1180px)}header{height:70px}nav{gap:14px;font-size:10px}nav a:first-child{display:none}.nav-cta{padding:11px 13px;font-size:9px}.hero{padding:78px 0 70px}.hero p{font-size:14px}.tour-grid{grid-template-columns:1fr;gap:12px}.tour-card{min-height:220px;padding:21px}.banner-inner{align-items:flex-start;flex-direction:column;padding:27px 23px}.banner{padding-bottom:65px}}
+</style>
+</head>
+<body>
+<header><div class="wrap header-inner">
+<a class="brand" href="https://boholtrip.ph/" aria-label="BOHOLTRIP home">BOHOL<span>TRIP</span></a>
+<nav aria-label="Main navigation"><a href="https://boholtrip.ph/">BOHOLTRIP HOME</a><a href="#tours">EXPLORE TOURS</a><a href="https://boholtrip.ph/about/">ABOUT</a></nav>
+<a class="nav-cta" href="https://boholtrip.ph/services/">ALL TOURS ↗</a>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="kicker">BOHOL · PHILIPPINES · MORE TO EXPLORE</div>
+<h1>Your Bohol adventure<br>doesn't end <em>with one tour.</em></h1>
+<p>From clear island waters and colorful reefs to countryside landmarks, peaceful rivers and hidden natural wonders — discover more ways to experience Bohol with BOHOLTRIP.</p>
+<div class="hero-actions"><a class="primary" href="https://boholtrip.ph/services/">EXPLORE ALL BOHOL TOURS ↗</a><a class="secondary" href="https://boholtrip.ph/">VISIT BOHOLTRIP</a></div>
+</div></section>
+<section class="intro"><div class="wrap intro-row"><div><div class="kicker">DISCOVER MORE OF THE ISLAND</div><h2>Find your next Bohol experience.</h2></div><p>Already planning your whale shark adventure? Add another side of Bohol to your trip. Browse ocean activities, land tours, nature experiences and private transport — all with our local travel team.</p></div></section>
+<section class="tours" id="tours"><div class="wrap"><div class="tour-grid">
+<a class="tour-card" href="https://boholtrip.ph/island-hopping/"><div class="card-top"><span class="card-icon">🌊</span><span class="card-tag">OCEAN & ISLANDS</span></div><h3>Bohol Island Hopping</h3><p>Explore Balicasag, snorkel in clear tropical waters and look out for sea turtles and vibrant marine life.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/napaling-snorkeling/"><div class="card-top"><span class="card-icon">🐟</span><span class="card-tag">SNORKELING</span></div><h3>Napaling Snorkeling</h3><p>Swim through the famous sardine run and discover the underwater beauty of Panglao.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/countryside-tour/"><div class="card-top"><span class="card-icon">⛰️</span><span class="card-tag">LAND & CULTURE</span></div><h3>Bohol Countryside Tour</h3><p>See the Chocolate Hills, meet the Philippine tarsier and explore Bohol's cultural landmarks.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/firefly/"><div class="card-top"><span class="card-icon">✨</span><span class="card-tag">NIGHT EXPERIENCE</span></div><h3>Firefly Watching</h3><p>Enjoy a peaceful evening river cruise as fireflies illuminate the mangroves and riverbanks.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/anda/"><div class="card-top"><span class="card-icon">🏝️</span><span class="card-tag">EAST BOHOL</span></div><h3>Anda Discovery Tour</h3><p>Discover quiet beaches, natural caves, waterfalls and the beautiful eastern side of Bohol.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/dal/"><div class="card-top"><span class="card-icon">💧</span><span class="card-tag">NATURE & WATERFALLS</span></div><h3>Bohol Waterfall Adventure</h3><p>Explore tropical waterfalls and refreshing natural pools tucked away in Bohol's landscape.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/panglao-city-tour/"><div class="card-top"><span class="card-icon">🌴</span><span class="card-tag">Panglao</span></div><h3>Panglao City Tour</h3><p>Visit island landmarks, beautiful beaches, Hinagdanan Cave and scenic coastal spots.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/danao-adventure/"><div class="card-top"><span class="card-icon">🪂</span><span class="card-tag">ADVENTURE</span></div><h3>Danao Adventure Park</h3><p>Add a thrill to your trip with ziplining, the Skyride, giant swing and outdoor challenges.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/mirror/"><div class="card-top"><span class="card-icon">🌍</span><span class="card-tag">UNIQUE ATTRACTION</span></div><h3>Mirror of the World</h3><p>See famous world landmarks recreated in one unique attraction in the heart of Bohol.</p><div class="card-link">DISCOVER TOUR <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/private-car-rental/"><div class="card-top"><span class="card-icon">🚙</span><span class="card-tag">PRIVATE TRANSPORT</span></div><h3>Private Car Rental</h3><p>Travel at your own pace with a private vehicle, local driver and a flexible itinerary.</p><div class="card-link">DISCOVER SERVICE <span>↗</span></div></a>
+<a class="tour-card" href="https://boholtrip.ph/pick-up/"><div class="card-top"><span class="card-icon">✈️</span><span class="card-tag">AIRPORT & SEAPORT</span></div><h3>Airport & Seaport Transfer</h3><p>Arrange a convenient private transfer between the airport, seaport and your accommodation.</p><div class="card-link">DISCOVER SERVICE <span>↗</span></div></a>
+</div></div></section>
+<section class="banner"><div class="wrap banner-inner"><div><h2>Ready to explore more of Bohol?</h2><p>Discover every available tour, check the details and plan your next island experience with BOHOLTRIP.</p></div><a class="primary" href="https://boholtrip.ph/services/">VIEW ALL TOURS ↗</a></div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 BOHOLTRIP · Powered by BS Travel & Tours</span><span>Explore more at <a href="https://boholtrip.ph/">boholtrip.ph ↗</a></span><span><a href="https://boholwhaleshark.com/">← Back to Bohol Whale Shark</a></span></div></footer>
+</body></html>
