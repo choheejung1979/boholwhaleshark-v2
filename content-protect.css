@@ -1,0 +1,14 @@
+/* Content copying deterrence — not DRM */
+html,body,.site-header,.hero,.container,main,section,article,footer{
+  -webkit-user-select:none!important;user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+img,video,svg,.hero-visual,.tour-card,.feature-card{
+  -webkit-user-drag:none!important;user-drag:none!important;
+  -webkit-user-select:none!important;user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+input,textarea,select,[contenteditable="true"],[contenteditable=""],.allow-copy{
+  -webkit-user-select:text!important;user-select:text!important;
+  -webkit-touch-callout:default!important;
+}
